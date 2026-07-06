@@ -30,11 +30,11 @@
 
       --logo:url("https://i.postimg.cc/9Mby4QGz/2a70fdea-27b0-4701-8bb7-8bf712da7c50.jpg");
 
-      --hero1:url("https://rerooms.ru/assets/last/pages/seo2/header/bg-07586617ae71cc27d856480d70d5af1cbaf6d0da26239cec08013eb406df0645.jpg");
-      --hero2:url("https://interio-lab.ru/images/works/kvart/jk-smol-park2/smol-park-2.jpg");
-      --hero3:url("https://sanmarco-vernici.ru/image/cache/adaptive/catalog/blog/stati/2019/stil_hai_tec/stil_xai_tek_v_interiere_50-1140x600.jpg");
-      --hero4:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7s7g8AHjDLwRZXUnXrMkpb1GEDZ5li4BbnOwXXx3IGDB6_6fRnwgUck&s=10");
-      --hero5:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI1prcpJR3A3kAciggrqLaXS9dSDqsgj1hD8TCMwSLcU0tR1DynAVdLLY8&s=10");
+      --hero1:url("https://avatars.mds.yandex.net/i?id=ddf7cfdd90417c6877d0ecdfcb6afedd09f426f2-5480005-images-thumbs&n=13");
+      --hero2:url("https://static.tildacdn.com/tild3261-6561-4766-a465-313965383862/25.jpg");
+      --hero3:url("https://cdn.basicdecor.ru/files/media/app_pictures/0df/309831/original/gostinaya-zhk-park-stolic-22-foto-1.jpg");
+      --hero4:url("https://avatars.mds.yandex.net/i?id=b80a75c05fac1a0edd1bee0a2bd6014a_l-11623870-images-thumbs&n=13");
+      --hero5:url("https://www.klerk.ru/yindex.php/og?id=664821&entity=company_blogpost");
 
       --photo1:url("https://i.pinimg.com/originals/aa/34/a3/aa34a348218eb2324d8505ff69afcb55.jpg");
       --photo2:url("https://avatars.mds.yandex.net/i?id=3d72d14b6fb49426f63d17e0eff083ad_l-3699999-images-thumbs&n=13");
@@ -92,6 +92,34 @@
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     button,input,textarea{font:inherit}
+
+    html{
+      scrollbar-width:thin;
+      scrollbar-color:rgba(192,154,95,.78) rgba(8,8,8,.86);
+    }
+
+    ::-webkit-scrollbar{width:10px;height:10px}
+
+    ::-webkit-scrollbar-track{
+      background:linear-gradient(180deg,#050505,#11100e 52%,#050505);
+      border-left:1px solid rgba(237,211,160,.08);
+    }
+
+    ::-webkit-scrollbar-thumb{
+      border:2px solid #070706;
+      border-radius:999px;
+      background:linear-gradient(180deg,#efd4a1 0%,#c09a5f 48%,#6a4a28 100%);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.11),0 0 18px rgba(192,154,95,.28);
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+      background:linear-gradient(180deg,#fff2d4 0%,#c09a5f 52%,#8e6a3c 100%);
+    }
+
+    ::selection{
+      color:#080705;
+      background:rgba(237,211,160,.88);
+    }
 
     .scroll-progress{
       position:fixed;
@@ -319,10 +347,10 @@
       inset:0;
       background-image:var(--slide);
       background-size:cover;
-      background-position:center;
+      background-position:center right;
       opacity:0;
       transform:scale(1.035);
-      filter:saturate(.9) contrast(1.08) brightness(.82);
+      filter:saturate(.96) contrast(1.08) brightness(.92);
       animation:heroPhotoSlider 30s infinite;
     }
 
@@ -338,8 +366,8 @@
       inset:0;
       z-index:2;
       background:
-        linear-gradient(90deg,rgba(4,4,4,.95) 0%,rgba(4,4,4,.86) 30%,rgba(4,4,4,.48) 58%,rgba(4,4,4,.18) 82%,rgba(4,4,4,.12) 100%),
-        linear-gradient(180deg,rgba(4,4,4,.62) 0%,rgba(4,4,4,.04) 42%,rgba(4,4,4,.72) 100%);
+        linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.90) 28%,rgba(4,4,4,.62) 48%,rgba(4,4,4,.20) 70%,rgba(4,4,4,.04) 100%),
+        linear-gradient(180deg,rgba(4,4,4,.46) 0%,rgba(4,4,4,.08) 44%,rgba(4,4,4,.60) 100%);
       pointer-events:none;
     }
 
@@ -349,8 +377,8 @@
       inset:0;
       z-index:3;
       background:
-        radial-gradient(circle at 22% 44%,rgba(0,0,0,.22) 0%,rgba(0,0,0,.12) 36%,rgba(0,0,0,.30) 100%),
-        linear-gradient(90deg,rgba(0,0,0,.22),transparent 68%);
+        radial-gradient(ellipse at 18% 48%,rgba(0,0,0,.42) 0%,rgba(0,0,0,.22) 34%,transparent 62%),
+        radial-gradient(circle at 84% 20%,rgba(237,211,160,.08),transparent 34%);
       pointer-events:none;
     }
 
@@ -360,7 +388,8 @@
       z-index:-1;
       pointer-events:none;
       background:
-        linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.84) 36%,rgba(4,4,4,.34) 66%,rgba(255,238,205,.035) 100%);
+        radial-gradient(ellipse at 18% 46%,rgba(0,0,0,.44) 0%,rgba(0,0,0,.24) 34%,transparent 58%),
+        radial-gradient(circle at 84% 26%,rgba(237,211,160,.10),transparent 36%);
       animation:heroGlow 9s ease-in-out infinite;
     }
 
@@ -368,9 +397,19 @@
       display:grid;
       grid-template-columns:minmax(0,720px);
       align-items:center;
+      justify-items:start;
+      text-align:left;
     }
 
-    .hero-copy{max-width:650px}
+    .hero-copy{
+      position:relative;
+      display:grid;
+      justify-items:start;
+      width:100%;
+      max-width:650px;
+      margin:0;
+      text-align:left;
+    }
 
     .eyebrow{
       display:inline-flex;
@@ -424,6 +463,7 @@
 
     .hero-actions{
       display:flex;
+      justify-content:flex-start;
       gap:12px;
       flex-wrap:wrap;
       margin-top:30px;
@@ -1370,8 +1410,8 @@
       .process-card{min-height:420px}
       .hero-photo-bg:before{
         background:
-          linear-gradient(90deg,rgba(4,4,4,.95) 0%,rgba(4,4,4,.82) 38%,rgba(4,4,4,.42) 72%,rgba(4,4,4,.18) 100%),
-          linear-gradient(180deg,rgba(4,4,4,.66) 0%,rgba(4,4,4,.08) 42%,rgba(4,4,4,.76) 100%);
+          linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.90) 34%,rgba(4,4,4,.58) 58%,rgba(4,4,4,.18) 82%,rgba(4,4,4,.05) 100%),
+          linear-gradient(180deg,rgba(4,4,4,.54) 0%,rgba(4,4,4,.12) 42%,rgba(4,4,4,.70) 100%);
       }
     }
 
@@ -1404,8 +1444,8 @@
     @media (max-width:720px){
       .hero-photo-bg:before{
         background:
-          linear-gradient(90deg,rgba(4,4,4,.96) 0%,rgba(4,4,4,.86) 54%,rgba(4,4,4,.48) 100%),
-          linear-gradient(180deg,rgba(4,4,4,.74) 0%,rgba(4,4,4,.18) 38%,rgba(4,4,4,.84) 100%);
+          linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.92) 48%,rgba(4,4,4,.52) 76%,rgba(4,4,4,.18) 100%),
+          linear-gradient(180deg,rgba(4,4,4,.70) 0%,rgba(4,4,4,.22) 38%,rgba(4,4,4,.86) 100%);
       }
       .hero-slide{background-position:center}
       .contact-grid{gap:28px}
@@ -1419,12 +1459,12 @@
       .mobile-panel{left:12px;right:12px;top:72px}
       .brand{font-size:16px;letter-spacing:.08em}
       .hero{padding:38px 0 42px;min-height:auto}
-      .hero-glow{background:linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.92) 48%,rgba(4,4,4,.58) 100%)}
-      .hero-copy{text-align:center}
+      .hero-glow{background:radial-gradient(ellipse at 18% 46%,rgba(0,0,0,.48) 0%,rgba(0,0,0,.28) 42%,transparent 76%),linear-gradient(90deg,rgba(4,4,4,.84) 0%,rgba(4,4,4,.56) 58%,rgba(4,4,4,.24) 100%)}
+      .hero-copy{text-align:left;justify-items:start}
       .eyebrow{font-size:9.5px;letter-spacing:.08em;line-height:1.35;margin-bottom:16px}
       h1{font-size:clamp(31px,8.8vw,40px);line-height:1.08;letter-spacing:-.046em;margin-bottom:16px}
       .lead{font-size:15px;line-height:1.58}
-      .hero-actions{display:grid;grid-template-columns:1fr;margin-top:24px}
+      .hero-actions{display:grid;grid-template-columns:1fr;margin-top:24px;justify-content:start}
       .btn{width:100%;min-height:46px;font-size:13.5px}
       .packages,.portfolio-grid,.works-gallery{grid-template-columns:1fr}
       .portfolio-card{min-height:360px}
@@ -1528,6 +1568,7 @@
           <p class="lead">
             Делаем интерьер целиком: ремонт, отделочные работы, кухни, шкафы, прихожие, ванные, спальни и корпусную мебель под размеры вашего объекта. Один проект, один стиль, один понятный результат.
           </p>
+
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/77470268980?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20ремонту%20и%20мебели%20на%20заказ" target="_blank" rel="noopener">Получить консультацию</a>
