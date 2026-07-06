@@ -1,1 +1,486 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KMF Interior — ремонт, интерьер и мебель под ключ</title>
+  <meta name="description" content="KMF Interior: ремонт под ключ, дизайн интерьера, мебель на заказ и комплектация объекта в Караганде." />
+  <meta name="theme-color" content="#050403" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050403;
+      --bg2:#0a0806;
+      --surface:rgba(17,14,11,.74);
+      --surface2:rgba(25,20,15,.82);
+      --surface3:rgba(255,255,255,.035);
+      --ink:#f8f2e8;
+      --text:#dfd5c7;
+      --muted:#a79b8c;
+      --muted2:#756b60;
+      --gold:#c49a5a;
+      --gold2:#e4c284;
+      --gold3:#8d6939;
+      --line:rgba(228,194,132,.16);
+      --line2:rgba(255,255,255,.11);
+      --shadow:0 34px 110px rgba(0,0,0,.48);
+      --radius:28px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 48% -14%, rgba(228,194,132,.14), transparent 32rem),
+        radial-gradient(circle at 12% 18%, rgba(196,154,90,.08), transparent 30rem),
+        linear-gradient(180deg,#050403 0%,#090705 48%,#050403 100%);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:-7vh -7vw;
+      pointer-events:none;
+      z-index:-3;
+      background:
+        linear-gradient(90deg,rgba(5,4,3,.96) 0%,rgba(5,4,3,.88) 44%,rgba(5,4,3,.62) 100%),
+        url("assets/kmf-dark-bg.jpg") center/cover no-repeat;
+      opacity:.92;
+      transform:translateZ(0);
+    }
+    body:after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+      opacity:.055;
+      mix-blend-mode:soft-light;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,textarea{font:inherit}
+    h1,h2,h3,p{margin-top:0}
+    .container{width:min(var(--max),calc(100% - 40px));margin:0 auto;position:relative;z-index:1}
+    .scroll-progress{position:fixed;left:0;top:0;width:0;height:2px;background:linear-gradient(90deg,var(--gold3),var(--gold2),#fff2c8);z-index:100;box-shadow:0 0 26px rgba(228,194,132,.42)}
 
+    .nav{
+      position:sticky;top:0;z-index:80;
+      border-bottom:1px solid rgba(228,194,132,.10);
+      background:rgba(5,4,3,.74);
+      backdrop-filter:blur(22px);
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;transition:transform .24s ease,opacity .24s ease}
+    .brand:hover{transform:translateY(-1px);opacity:.92}
+    .brand-logo{
+      width:74px;height:58px;object-fit:contain;border-radius:16px;
+      filter:drop-shadow(0 14px 34px rgba(196,154,90,.18));
+    }
+    .nav-links{display:flex;align-items:center;gap:25px;color:#bdb2a4;font-size:13px;font-weight:400;letter-spacing:.04em}
+    .nav-links a{position:relative;transition:color .22s ease}
+    .nav-links a:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:1px;background:linear-gradient(90deg,var(--gold2),transparent);transform:scaleX(0);transform-origin:left;opacity:0;transition:transform .24s ease,opacity .24s ease}
+    .nav-links a:hover,.nav-links a.active-link{color:#fff7e9}
+    .nav-links a:hover:after,.nav-links a.active-link:after{transform:scaleX(1);opacity:1}
+    .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 17px;border-radius:999px;border:1px solid rgba(228,194,132,.28);background:rgba(196,154,90,.10);color:#fff5e4!important;font-size:13px;font-weight:500;transition:.22s ease;white-space:nowrap}
+    .nav-cta:hover{border-color:rgba(228,194,132,.46);background:rgba(196,154,90,.16);transform:translateY(-1px)}
+    .burger{display:none;width:46px;height:46px;border:1px solid rgba(228,194,132,.18);border-radius:999px;background:rgba(255,255,255,.035);color:#fff;font-size:21px;cursor:pointer}
+    .mobile-menu{display:none}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 21px;border-radius:999px;border:1px solid rgba(255,255,255,.10);font-size:13.5px;font-weight:500;letter-spacing:.01em;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease,color .22s ease;will-change:transform;white-space:nowrap}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{color:#100d09;background:linear-gradient(135deg,#f1d39b 0%,var(--gold2) 38%,var(--gold) 72%,#9b743e 100%);box-shadow:0 18px 52px rgba(196,154,90,.22)}
+    .btn-primary:hover{box-shadow:0 24px 66px rgba(196,154,90,.30)}
+    .btn-ghost{color:#f4eadc;background:rgba(255,255,255,.035);border-color:rgba(228,194,132,.20)}
+    .btn-ghost:hover{background:rgba(196,154,90,.10);border-color:rgba(228,194,132,.38)}
+
+    .hero{position:relative;min-height:calc(100svh - 76px);display:flex;align-items:center;padding:78px 0 82px;overflow:hidden}
+    .hero:before{content:"";position:absolute;left:48%;top:52%;width:min(920px,95vw);height:min(680px,78vw);border-radius:50%;background:radial-gradient(circle,rgba(196,154,90,.18),transparent 64%);filter:blur(18px);opacity:.9;transform:translate(-50%,-50%);z-index:0}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(410px,.9fr);gap:46px;align-items:center}
+    .hero-copy{position:relative;z-index:2;max-width:680px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:8px 13px;border:1px solid rgba(228,194,132,.16);border-radius:999px;background:rgba(255,255,255,.032);color:#c9b58f;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow i{width:6px;height:6px;border-radius:999px;background:var(--gold2);box-shadow:0 0 0 5px rgba(228,194,132,.10)}
+    h1{margin:0 0 20px;font-family:"Manrope","Inter",sans-serif;font-size:clamp(42px,5.2vw,70px);line-height:1.02;font-weight:400;letter-spacing:-.06em;color:#fff8ec;max-width:760px}
+    h1 .gold{display:inline;background:linear-gradient(90deg,#f5dbab,#c79b58 54%,#fff2cb);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:titleGradient 7s ease-in-out infinite}
+    .lead{margin:0;max-width:650px;color:#cbbfaf;font-size:clamp(16px,1.45vw,18.5px);line-height:1.72;font-weight:300;letter-spacing:-.012em}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}
+    .hero-points{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;max-width:680px}
+    .hero-chip{padding:9px 12px;border:1px solid rgba(228,194,132,.13);border-radius:999px;background:rgba(255,255,255,.026);color:#a99d8e;font-size:12.5px;font-weight:300;line-height:1.35;transition:.22s ease}
+    .hero-chip:hover{transform:translateY(-2px);border-color:rgba(228,194,132,.32);background:rgba(196,154,90,.10);color:#eadfce}
+
+    .hero-video-wrap{position:relative;min-height:590px;perspective:1200px}
+    .hero-video-card{position:absolute;inset:0;border:1px solid rgba(228,194,132,.22);border-radius:34px;background:rgba(12,10,8,.68);box-shadow:var(--shadow);overflow:hidden;isolation:isolate;transform:translateZ(0);transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .35s ease,box-shadow .35s ease}
+    .hero-video-card:hover{transform:translateY(-5px) rotateX(.6deg) rotateY(-.8deg);border-color:rgba(228,194,132,.36);box-shadow:0 44px 120px rgba(0,0,0,.58),0 0 0 1px rgba(228,194,132,.08)}
+    .hero-video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;transform:scale(1.08);filter:saturate(.92) contrast(1.05) brightness(.78);transition:filter .45s ease,transform .8s ease;background:#060504}
+    .hero-video-card:hover iframe{filter:saturate(1.02) contrast(1.06) brightness(.86);transform:scale(1.045)}
+    .hero-video-card:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(5,4,3,.62),rgba(5,4,3,.18) 48%,rgba(5,4,3,.08)),linear-gradient(180deg,rgba(5,4,3,.06),rgba(5,4,3,.78));transition:opacity .45s ease}
+    .hero-video-card:after{content:"";position:absolute;inset:-1px;z-index:2;pointer-events:none;background:linear-gradient(118deg,transparent 0%,rgba(255,255,255,.08) 22%,transparent 42%);transform:translateX(-110%);animation:videoSheen 7s ease-in-out infinite}
+    .video-glass{position:absolute;left:22px;right:22px;bottom:22px;z-index:4;padding:18px 18px 17px;border-radius:22px;border:1px solid rgba(255,255,255,.13);background:rgba(5,4,3,.58);backdrop-filter:blur(18px)}
+    .video-glass span{display:block;margin-bottom:7px;color:#e6c78d;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.15em}
+    .video-glass p{margin:0;color:#efe6d8;font-family:"Manrope","Inter",sans-serif;font-size:20px;line-height:1.25;font-weight:400;letter-spacing:-.035em}
+    .quality-badge{position:absolute;right:-18px;top:38px;z-index:5;width:138px;height:138px;border-radius:50%;display:grid;place-items:center;text-align:center;border:6px solid rgba(255,255,255,.70);background:linear-gradient(135deg,#caa267,#936735);box-shadow:0 18px 54px rgba(0,0,0,.42),0 0 0 1px rgba(255,255,255,.22) inset;color:#fff;font-size:13px;font-weight:500;line-height:1.38;text-transform:uppercase;letter-spacing:.04em;animation:floatBadge 6s ease-in-out infinite}
+    .video-note{position:absolute;right:22px;bottom:-19px;z-index:5;padding:11px 14px;border-radius:999px;border:1px solid rgba(228,194,132,.22);background:rgba(5,4,3,.76);backdrop-filter:blur(16px);color:#b8ab99;font-size:12px}
+
+    section{padding:92px 0}
+    .section-head{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(280px,.88fr);gap:60px;align-items:end;margin-bottom:34px}
+    .kicker{margin-bottom:13px;color:#d4aa68;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:600}
+    h2{margin:0;font-family:"Manrope","Inter",sans-serif;font-size:clamp(30px,3.25vw,44px);line-height:1.12;font-weight:400;letter-spacing:-.045em;color:#fff8ec}
+    .section-copy{margin:0;color:#b8aa98;font-size:16px;line-height:1.72;font-weight:300;letter-spacing:-.01em}
+
+    .stats-band{position:relative;margin-top:-34px;z-index:4}
+    .stats-shell{border:1px solid rgba(228,194,132,.17);border-radius:28px;background:linear-gradient(180deg,rgba(17,14,11,.92),rgba(7,6,5,.92));box-shadow:0 30px 90px rgba(0,0,0,.36);overflow:hidden}
+    .stats-shell:before{content:"";display:block;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),rgba(255,255,255,.30),transparent)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{min-height:150px;padding:25px 22px;border-right:1px solid rgba(228,194,132,.11);display:flex;flex-direction:column;justify-content:space-between;gap:17px;background:rgba(255,255,255,.02);position:relative;overflow:hidden;transition:.3s ease}
+    .stat:last-child{border-right:0}
+    .stat:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,var(--gold3),var(--gold2),transparent);transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+    .stat.visible:after{transform:scaleX(1)}
+    .stat:hover{background:rgba(196,154,90,.07);transform:translateY(-3px)}
+    .stat-number{font-family:"Manrope","Inter",sans-serif;font-size:clamp(32px,3.8vw,48px);line-height:.95;font-weight:400;letter-spacing:-.06em;color:#fff8ec;font-variant-numeric:tabular-nums}
+    .stat-label{color:#a99c8b;font-size:13.5px;line-height:1.45;font-weight:300}
+
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{position:relative;min-height:260px;padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));overflow:hidden;transition:transform .28s ease,border-color .28s ease,background .28s ease,box-shadow .28s ease}
+    .card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 24% 0%,rgba(228,194,132,.15),transparent 44%);opacity:0;transition:.28s ease}
+    .card:hover{transform:translateY(-5px);border-color:rgba(228,194,132,.30);background:rgba(255,255,255,.045);box-shadow:0 24px 76px rgba(0,0,0,.26)}
+    .card:hover:before{opacity:1}
+    .card>*{position:relative;z-index:1}
+    .tag{display:inline-flex;margin-bottom:30px;color:#d4aa68;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+    .card h3,.step h3,.package h3,.project h3{margin:0 0 13px;font-family:"Manrope","Inter",sans-serif;font-size:21px;line-height:1.2;font-weight:450;letter-spacing:-.035em;color:#fff7e9}
+    .card p,.step p,.package p,.project p{margin:0;color:#ad9f8e;font-size:15px;line-height:1.68;font-weight:300}
+
+    .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;align-items:stretch}
+    .visual-panel{min-height:520px;border-radius:32px;border:1px solid rgba(228,194,132,.16);background:url('assets/flyer-hero-bg.jpg') center/cover no-repeat;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .visual-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,4,3,.08),rgba(5,4,3,.68)),linear-gradient(90deg,rgba(5,4,3,.68),transparent)}
+    .visual-caption{position:absolute;left:22px;right:22px;bottom:22px;z-index:2;padding:20px;border-radius:24px;border:1px solid rgba(255,255,255,.12);background:rgba(5,4,3,.58);backdrop-filter:blur(18px)}
+    .visual-caption b{display:block;color:#fff8ec;font-family:"Manrope","Inter",sans-serif;font-size:23px;font-weight:400;letter-spacing:-.035em;margin-bottom:8px}
+    .visual-caption span{color:#b9ad9d;font-size:14px;line-height:1.55}
+    .checks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .check{min-height:154px;padding:21px;border-radius:22px;border:1px solid rgba(228,194,132,.13);background:rgba(255,255,255,.03);transition:.25s ease}
+    .check:hover{transform:translateY(-3px);border-color:rgba(228,194,132,.30);background:rgba(196,154,90,.08)}
+    .check b{display:block;color:#fff5e5;font-size:15px;font-weight:500;margin-bottom:9px}
+    .check span{color:#a99c8d;font-size:14px;line-height:1.6;font-weight:300}
+
+    .process{position:relative;padding:92px 0;background:#040302;border-top:1px solid rgba(228,194,132,.12);border-bottom:1px solid rgba(228,194,132,.10);overflow:hidden}
+    .process:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(196,154,90,.16),transparent 34%),radial-gradient(circle at 92% 28%,rgba(228,194,132,.10),transparent 30%);pointer-events:none}
+    .timeline{display:grid;gap:12px}
+    .step{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:23px 26px;border:1px solid rgba(228,194,132,.13);border-radius:23px;background:rgba(255,255,255,.028);transition:.25s ease}
+    .step:hover{transform:translateX(4px);border-color:rgba(228,194,132,.28);background:rgba(196,154,90,.06)}
+    .step-num{color:#d4aa68;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding-top:5px}
+
+    .portfolio-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:14px}
+    .project{position:relative;min-height:430px;border-radius:30px;overflow:hidden;border:1px solid rgba(228,194,132,.15);background:#0b0805;box-shadow:0 22px 70px rgba(0,0,0,.24);transition:.35s cubic-bezier(.2,.8,.2,1)}
+    .project:hover{transform:translateY(-6px) scale(1.006);border-color:rgba(228,194,132,.30);box-shadow:0 30px 90px rgba(0,0,0,.36)}
+    .project.small{min-height:208px}
+    .project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.03) brightness(.76);transition:.55s ease}
+    .project:hover img{transform:scale(1.045);filter:saturate(1.02) contrast(1.05) brightness(.82)}
+    .project:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(5,4,3,.88))}
+    .project-body{position:absolute;left:22px;right:22px;bottom:22px;z-index:2}
+    .project-body h3{font-size:23px;margin-bottom:8px}
+    .stack{display:grid;gap:14px}
+
+    .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .package{padding:26px;border-radius:28px;border:1px solid rgba(228,194,132,.14);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));transition:.28s ease}
+    .package.featured{border-color:rgba(228,194,132,.34);background:linear-gradient(180deg,rgba(196,154,90,.14),rgba(255,255,255,.026));box-shadow:0 28px 90px rgba(0,0,0,.26)}
+    .package:hover{transform:translateY(-5px);border-color:rgba(228,194,132,.32)}
+    .package ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px;color:#b7aa98;font-size:14px;line-height:1.45;font-weight:300}
+    .package li{position:relative;padding-left:20px}
+    .package li:before{content:"";position:absolute;left:0;top:.56em;width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 0 4px rgba(228,194,132,.10)}
+
+    .cta{padding-bottom:36px}
+    .cta-box{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:34px;border-radius:32px;border:1px solid rgba(228,194,132,.20);background:linear-gradient(135deg,rgba(196,154,90,.16),rgba(255,255,255,.032) 50%,rgba(5,4,3,.80));box-shadow:0 30px 90px rgba(0,0,0,.28);overflow:hidden;position:relative}
+    .cta-box:before{content:"";position:absolute;inset:-1px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.09),transparent);transform:translateX(-100%);animation:railMove 8s ease-in-out infinite;pointer-events:none}
+    .cta-box h2{font-size:clamp(28px,3.1vw,42px);max-width:780px;margin-bottom:14px}
+    .cta-box p{margin:0;max-width:740px;color:#b8ac9c;font-size:16px;line-height:1.65;font-weight:300}
+    .cta-actions{display:flex;gap:11px;flex-wrap:wrap;justify-content:flex-end;position:relative;z-index:1}
+
+    .footer{position:relative;z-index:1;padding:46px 0 34px;border-top:1px solid rgba(228,194,132,.12);background:rgba(3,2,1,.78)}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+    .footer-logo{width:86px;height:68px;object-fit:contain;margin-bottom:14px;filter:drop-shadow(0 12px 30px rgba(196,154,90,.12))}
+    .footer p{margin:0;color:#84786a;font-size:13.5px;line-height:1.6}
+    .footer-contacts{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .contact-pill{padding:11px 13px;border:1px solid rgba(228,194,132,.15);border-radius:999px;background:rgba(255,255,255,.026);color:#b9ad9e;font-size:13.5px;transition:.22s ease}
+    .contact-pill:hover{color:#fff5e8;border-color:rgba(228,194,132,.32);background:rgba(196,154,90,.08)}
+    .float-call{position:fixed;right:20px;bottom:20px;z-index:70}
+
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .85s ease,transform .85s cubic-bezier(.22,1,.36,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
+
+    @keyframes titleGradient{0%,100%{background-position:0% center}50%{background-position:100% center}}
+    @keyframes videoSheen{0%,72%{transform:translateX(-120%);opacity:0}82%{opacity:1}100%{transform:translateX(120%);opacity:0}}
+    @keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @keyframes railMove{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
+
+    @media (prefers-reduced-motion: reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    @media (max-width:1080px){
+      .nav-links{display:none}.burger{display:grid;place-items:center}.mobile-menu.open{display:grid;position:fixed;top:76px;left:0;right:0;z-index:75;padding:16px 20px 22px;background:rgba(5,4,3,.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(228,194,132,.12);gap:10px}.mobile-menu a{padding:14px 0;border-bottom:1px solid rgba(228,194,132,.09);color:#f2e9da;font-size:14px}.hero{min-height:auto}.hero-grid,.split,.cta-box{grid-template-columns:1fr}.hero-copy{max-width:780px}.hero-video-wrap{min-height:560px}.services,.packages{grid-template-columns:repeat(2,1fr)}.portfolio-grid{grid-template-columns:1fr}.section-head{grid-template-columns:1fr;gap:18px}.footer-grid{grid-template-columns:1fr}.footer-contacts,.cta-actions{justify-content:flex-start}.visual-panel{min-height:460px}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 28px,var(--max))}.nav-inner{height:68px}.brand-logo{width:66px;height:52px}.mobile-menu.open{top:68px}.hero{padding:46px 0 58px}.hero-grid{gap:28px}h1{font-size:clamp(34px,10vw,48px);line-height:1.05;letter-spacing:-.052em}.lead{font-size:15.5px;line-height:1.6}.hero-actions{display:grid}.btn{width:100%;padding-inline:18px}.hero-points{gap:8px}.hero-chip{font-size:12px}.hero-video-wrap{min-height:440px}.hero-video-card{border-radius:28px}.quality-badge{width:118px;height:118px;right:10px;top:18px;border-width:5px;font-size:11px}.video-glass{left:14px;right:14px;bottom:14px;border-radius:20px;padding:16px}.video-glass p{font-size:17px}.video-note{display:none}.stats-band{margin-top:0}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2n){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid rgba(228,194,132,.11)}section,.process{padding:62px 0}.services,.checks,.packages{grid-template-columns:1fr}.card{min-height:auto}.step{grid-template-columns:1fr;gap:8px;padding:22px}.visual-panel{min-height:380px}.project,.project.small{min-height:320px}.cta-box{padding:24px;border-radius:28px}.float-call{left:14px;right:14px;bottom:14px}.float-call .btn{width:100%}
+    }
+    @media (max-width:420px){
+      .eyebrow{width:100%;justify-content:center;text-align:center;font-size:9.8px;letter-spacing:.08em}.stats-grid{grid-template-columns:1fr}.stat{border-right:0!important;border-bottom:1px solid rgba(228,194,132,.10)}.stat:last-child{border-bottom:0}.hero-video-wrap{min-height:385px}h1{font-size:clamp(31px,9.2vw,39px)}
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="KMF Interior">
+        <img class="brand-logo" src="https://i.postimg.cc/9Mby4QGz/2a70fdea-27b0-4701-8bb7-8bf712da7c50.jpg" alt="Логотип KMF Interior" onerror="this.onerror=null;this.src='assets/logo-fallback.jpg'" />
+      </a>
+      <nav class="nav-links" aria-label="Навигация">
+        <a href="#services">Услуги</a>
+        <a href="#approach">Подход</a>
+        <a href="#process">Процесс</a>
+        <a href="#portfolio">Работы</a>
+        <a class="nav-cta" href="https://wa.me/77470268980?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20KMF%20Interior" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      </nav>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Услуги</a>
+      <a href="#approach">Подход</a>
+      <a href="#process">Процесс</a>
+      <a href="#portfolio">Работы</a>
+      <a href="tel:+77470268980">+7 747 026 89 80</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Главный экран">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow reveal"><i></i> Караганда · ремонт · интерьер · мебель</div>
+          <h1 class="reveal delay-1">Ремонт под ключ <span class="gold">в спокойной премиальной эстетике</span></h1>
+          <p class="lead reveal delay-2">Берем объект от идеи и планировки до чистовой отделки, мебели на заказ и финальной комплектации. Без хаоса, лишних подрядчиков и визуального шума.</p>
+          <div class="hero-actions reveal delay-3">
+            <a class="btn btn-primary" href="https://wa.me/77470268980?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D1%81%D1%81%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87" target="_blank" rel="noopener">Получить консультацию</a>
+            <a class="btn btn-ghost" href="#portfolio">Посмотреть стиль</a>
+          </div>
+          <div class="hero-points reveal delay-3" aria-label="Преимущества">
+            <span class="hero-chip">Дизайн-проект и смета</span>
+            <span class="hero-chip">Мебель по размерам</span>
+            <span class="hero-chip">Контроль сроков и качества</span>
+            <span class="hero-chip">Комплектация материалами</span>
+          </div>
+        </div>
+
+        <div class="hero-video-wrap reveal delay-2">
+          <div class="quality-badge">Качество.<br>Стиль.<br>Надежность.</div>
+          <div class="hero-video-card" aria-label="Видео KMF Interior">
+            <iframe src="https://player.vimeo.com/video/1207267172?autoplay=1&loop=1&muted=1&background=1&autopause=0&playsinline=1&dnt=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="KMF Interior video"></iframe>
+            <div class="video-glass">
+              <span>Видео-обзор</span>
+              <p>Атмосфера интерьера прямо в hero-блоке — мягко, без перегруза.</p>
+            </div>
+          </div>
+          <div class="video-note">Видео под оверлеем · плавный переход</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats-band">
+      <div class="container">
+        <div class="stats-shell reveal">
+          <div class="stats-grid">
+            <div class="stat"><div class="stat-number">100+</div><div class="stat-label">довольных клиентов и объектов под ключ</div></div>
+            <div class="stat"><div class="stat-number">4</div><div class="stat-label">направления в одной команде: дизайн, ремонт, мебель, комплектация</div></div>
+            <div class="stat"><div class="stat-number">0</div><div class="stat-label">лишних посредников: один подрядчик отвечает за результат</div></div>
+            <div class="stat"><div class="stat-number">1</div><div class="stat-label">единая эстетика от проекта до последней детали</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Что делаем</div>
+            <h2>Собираем интерьер как цельную систему, а не набор разрозненных работ.</h2>
+          </div>
+          <p class="section-copy">Вместо хаотичного ремонта — понятный маршрут: проектирование, расчет, закуп, производство мебели, отделка и сдача объекта. Каждый этап связан с финальным визуальным результатом.</p>
+        </div>
+        <div class="services">
+          <article class="card reveal"><span class="tag">01 · дизайн</span><h3>Дизайн интерьера</h3><p>Планировки, визуальная концепция, материалы, свет, мебель и решения под ваш образ жизни.</p></article>
+          <article class="card reveal delay-1"><span class="tag">02 · отделка</span><h3>Ремонт и отделка</h3><p>Черновые и чистовые работы с контролем качества, аккуратными узлами и сроками.</p></article>
+          <article class="card reveal delay-2"><span class="tag">03 · мебель</span><h3>Мебель на заказ</h3><p>Кухни, шкафы, гардеробные, тумбы и встроенные решения по точным размерам объекта.</p></article>
+          <article class="card reveal"><span class="tag">04 · материалы</span><h3>Комплектация</h3><p>Подбор и закуп материалов, фурнитуры, освещения и деталей без лишней нагрузки на клиента.</p></article>
+          <article class="card reveal delay-1"><span class="tag">05 · контроль</span><h3>Ведение объекта</h3><p>Регулярная коммуникация, согласования, фотофиксация и контроль подрядчиков внутри процесса.</p></article>
+          <article class="card reveal delay-2"><span class="tag">06 · сдача</span><h3>Под ключ</h3><p>Финальная сборка, проверка, уборка и передача готового пространства без лишних хлопот.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="container split">
+        <div class="visual-panel reveal">
+          <div class="visual-caption">
+            <b>Фон и палитра — в стиле вашего логотипа.</b>
+            <span>Глубокий черный, мягкое золото, тонкие линии, стеклянные панели и спокойная премиальная типографика.</span>
+          </div>
+        </div>
+        <div class="reveal delay-1">
+          <div class="kicker">Подход</div>
+          <h2>Детали выглядят дорого, когда они продуманы заранее.</h2>
+          <p class="section-copy" style="margin-top:18px">Мы не перегружаем лендинг огромными заголовками и кричащими блоками. Здесь акцент на доверии, визуальном вкусе, аккуратной подаче и быстрых действиях для клиента.</p>
+          <div class="checks" style="margin-top:26px">
+            <div class="check"><b>Смета до старта</b><span>Фиксируем ожидания, объем и приоритеты до начала работ.</span></div>
+            <div class="check"><b>Единый стиль</b><span>Цвета, материалы и мебель подбираются в общей логике.</span></div>
+            <div class="check"><b>Надежная коммуникация</b><span>Клиент понимает, что происходит на объекте и почему.</span></div>
+            <div class="check"><b>Финальная комплектация</b><span>Пространство доводится до состояния «можно жить».</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Процесс</div>
+            <h2>Пошагово ведем объект до результата.</h2>
+          </div>
+          <p class="section-copy">Каждый этап закрывает конкретный риск ремонта: непонятную смету, несовпадение ожиданий, задержки по материалам и ошибки на объекте.</p>
+        </div>
+        <div class="timeline">
+          <div class="step reveal"><div class="step-num">Этап 01</div><div><h3>Консультация и замер</h3><p>Обсуждаем задачу, бюджет, сроки, стиль и особенности помещения.</p></div></div>
+          <div class="step reveal delay-1"><div class="step-num">Этап 02</div><div><h3>Проект и расчет</h3><p>Готовим концепцию, планировочные решения, смету и порядок работ.</p></div></div>
+          <div class="step reveal delay-2"><div class="step-num">Этап 03</div><div><h3>Ремонт и производство</h3><p>Параллельно ведем отделку, закупки и изготовление мебели по проекту.</p></div></div>
+          <div class="step reveal delay-3"><div class="step-num">Этап 04</div><div><h3>Сдача под ключ</h3><p>Проверяем детали, собираем мебель, завершаем комплектацию и передаем объект.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Визуальный стиль</div>
+            <h2>Чистая современная подача для ремонта и интерьеров.</h2>
+          </div>
+          <p class="section-copy">Блоки собраны в спокойном темном стиле, с мягким золотым акцентом, плавными hover-эффектами и адаптацией под мобильные экраны.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="project reveal">
+            <img src="assets/project-living.jpg" alt="Гостиная в современном стиле">
+            <div class="project-body"><h3>Гостиная и кухня</h3><p>Единое пространство, мебель и свет в одной концепции.</p></div>
+          </article>
+          <div class="stack">
+            <article class="project small reveal delay-1">
+              <img src="assets/project-kitchen.jpg" alt="Кухонная зона">
+              <div class="project-body"><h3>Кухни на заказ</h3><p>Точные размеры, фурнитура, фасады и монтаж.</p></div>
+            </article>
+            <article class="project small reveal delay-2">
+              <img src="assets/project-details.jpg" alt="Детали интерьера">
+              <div class="project-body"><h3>Детали и комплектация</h3><p>Материалы, декор, свет и финальные штрихи.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Форматы</div>
+            <h2>Можно стартовать с консультации, проекта или полного ремонта.</h2>
+          </div>
+          <p class="section-copy">Выберите комфортный уровень участия: от дизайн-решения до полного ведения объекта и сдачи под ключ.</p>
+        </div>
+        <div class="packages">
+          <article class="package reveal"><span class="tag">Старт</span><h3>Консультация</h3><p>Разбор объекта, задач, ориентиров по бюджету и этапам.</p><ul><li>Первичная стратегия</li><li>Рекомендации по ремонту</li><li>План следующих шагов</li></ul></article>
+          <article class="package featured reveal delay-1"><span class="tag">Оптимально</span><h3>Проект + ремонт</h3><p>Проектирование, расчет, ремонтные работы и контроль объекта.</p><ul><li>Дизайн-концепция</li><li>Смета и график</li><li>Ведение объекта</li></ul></article>
+          <article class="package reveal delay-2"><span class="tag">Полный цикл</span><h3>Под ключ</h3><p>Ремонт, мебель на заказ, закуп материалов и финальная комплектация.</p><ul><li>От проекта до мебели</li><li>Материалы и комплектация</li><li>Финальная сдача</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2>Хотите понять бюджет и сроки вашего ремонта?</h2>
+            <p>Напишите в WhatsApp — уточним площадь, состояние объекта, желаемый формат работ и подскажем ближайший понятный шаг.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://wa.me/77470268980?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%B1%D1%8E%D0%B4%D0%B6%D0%B5%D1%82%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0" target="_blank" rel="noopener">Написать в WhatsApp</a>
+            <a class="btn btn-ghost" href="tel:+77470268980">Позвонить</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="https://i.postimg.cc/9Mby4QGz/2a70fdea-27b0-4701-8bb7-8bf712da7c50.jpg" alt="Логотип KMF Interior" onerror="this.onerror=null;this.src='assets/logo-fallback.jpg'" />
+        <p>Мебель · ремонт · интерьер под ключ<br>Караганда, Казахстан</p>
+      </div>
+      <div class="footer-contacts">
+        <a class="contact-pill" href="tel:+77470268980">+7 747 026 89 80</a>
+        <a class="contact-pill" href="https://instagram.com/kmf_interior_kz" target="_blank" rel="noopener">@kmf_interior_kz</a>
+        <a class="contact-pill" href="#top">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-call"><a class="btn btn-primary" href="https://wa.me/77470268980?text=%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20KMF%20Interior" target="_blank" rel="noopener">Бесплатная консультация</a></div>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('#mobileMenu');
+    burger?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '×' : '☰';
+    });
+    menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.textContent = '☰';
+    }));
+
+    const progress = document.querySelector('.scroll-progress');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = max > 0 ? `${(scrollY / max) * 100}%` : '0%';
+    };
+    addEventListener('scroll', updateProgress, {passive:true});
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          if(entry.target.classList.contains('stat')) observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.14, rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal,.stat').forEach(el => observer.observe(el));
+
+    const sections = [...document.querySelectorAll('section[id]')];
+    const navLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+    const markActive = () => {
+      let current = '';
+      sections.forEach(sec => { if(scrollY >= sec.offsetTop - 130) current = sec.id; });
+      navLinks.forEach(link => link.classList.toggle('active-link', link.getAttribute('href') === `#${current}`));
+    };
+    addEventListener('scroll', markActive, {passive:true});
+    markActive();
+  </script>
+</body>
+</html>
