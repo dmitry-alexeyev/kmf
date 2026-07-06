@@ -30,11 +30,10 @@
 
       --logo:url("https://i.postimg.cc/9Mby4QGz/2a70fdea-27b0-4701-8bb7-8bf712da7c50.jpg");
 
-      --hero1:url("https://avatars.mds.yandex.net/i?id=ddf7cfdd90417c6877d0ecdfcb6afedd09f426f2-5480005-images-thumbs&n=13");
-      --hero2:url("https://static.tildacdn.com/tild3261-6561-4766-a465-313965383862/25.jpg");
-      --hero3:url("https://cdn.basicdecor.ru/files/media/app_pictures/0df/309831/original/gostinaya-zhk-park-stolic-22-foto-1.jpg");
-      --hero4:url("https://avatars.mds.yandex.net/i?id=b80a75c05fac1a0edd1bee0a2bd6014a_l-11623870-images-thumbs&n=13");
-      --hero5:url("https://www.klerk.ru/yindex.php/og?id=664821&entity=company_blogpost");
+      --hero1:url("https://static.tildacdn.com/tild3261-6561-4766-a465-313965383862/25.jpg");
+      --hero2:url("https://cdn.basicdecor.ru/files/media/app_pictures/0df/309831/original/gostinaya-zhk-park-stolic-22-foto-1.jpg");
+      --hero3:url("https://avatars.mds.yandex.net/i?id=b80a75c05fac1a0edd1bee0a2bd6014a_l-11623870-images-thumbs&n=13");
+      --hero4:url("https://www.klerk.ru/yindex.php/og?id=664821&entity=company_blogpost");
 
       --photo1:url("https://i.pinimg.com/originals/aa/34/a3/aa34a348218eb2324d8505ff69afcb55.jpg");
       --photo2:url("https://avatars.mds.yandex.net/i?id=3d72d14b6fb49426f63d17e0eff083ad_l-3699999-images-thumbs&n=13");
@@ -351,14 +350,13 @@
       opacity:0;
       transform:scale(1.035);
       filter:saturate(.96) contrast(1.08) brightness(.92);
-      animation:heroPhotoSlider 30s infinite;
+      animation:heroPhotoSlider 24s infinite;
     }
 
     .hero-slide:nth-child(1){animation-delay:0s}
     .hero-slide:nth-child(2){animation-delay:6s}
     .hero-slide:nth-child(3){animation-delay:12s}
     .hero-slide:nth-child(4){animation-delay:18s}
-    .hero-slide:nth-child(5){animation-delay:24s}
 
     .hero-photo-bg:before{
       content:"";
@@ -436,6 +434,10 @@
     }
 
     h1,h2,h3,p{margin-top:0}
+
+    h1,h2,h3{
+      word-spacing:.055em;
+    }
 
     h1{
       margin:0 0 18px;
@@ -1375,10 +1377,9 @@
     .delay-3{transition-delay:.24s}
 
     @keyframes heroPhotoSlider{
-      0%{opacity:0;transform:scale(1.035)}
-      5%{opacity:1}
-      20%{opacity:1}
-      28%{opacity:0;transform:scale(1.09)}
+      0%{opacity:1;transform:scale(1.035)}
+      21%{opacity:1}
+      30%{opacity:0;transform:scale(1.09)}
       100%{opacity:0;transform:scale(1.09)}
     }
 
@@ -1554,7 +1555,6 @@
         <div class="hero-slide" style="--slide:var(--hero2)"></div>
         <div class="hero-slide" style="--slide:var(--hero3)"></div>
         <div class="hero-slide" style="--slide:var(--hero4)"></div>
-        <div class="hero-slide" style="--slide:var(--hero5)"></div>
       </div>
 
       <div class="hero-glow"></div>
