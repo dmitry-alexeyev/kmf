@@ -30,6 +30,12 @@
 
       --logo:url("https://i.postimg.cc/9Mby4QGz/2a70fdea-27b0-4701-8bb7-8bf712da7c50.jpg");
 
+      --hero1:url("https://rerooms.ru/assets/last/pages/seo2/header/bg-07586617ae71cc27d856480d70d5af1cbaf6d0da26239cec08013eb406df0645.jpg");
+      --hero2:url("https://interio-lab.ru/images/works/kvart/jk-smol-park2/smol-park-2.jpg");
+      --hero3:url("https://sanmarco-vernici.ru/image/cache/adaptive/catalog/blog/stati/2019/stil_hai_tec/stil_xai_tek_v_interiere_50-1140x600.jpg");
+      --hero4:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7s7g8AHjDLwRZXUnXrMkpb1GEDZ5li4BbnOwXXx3IGDB6_6fRnwgUck&s=10");
+      --hero5:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI1prcpJR3A3kAciggrqLaXS9dSDqsgj1hD8TCMwSLcU0tR1DynAVdLLY8&s=10");
+
       --photo1:url("https://i.pinimg.com/originals/aa/34/a3/aa34a348218eb2324d8505ff69afcb55.jpg");
       --photo2:url("https://avatars.mds.yandex.net/i?id=3d72d14b6fb49426f63d17e0eff083ad_l-3699999-images-thumbs&n=13");
       --photo3:url("https://i.pinimg.com/originals/4a/6f/13/4a6f1360f3cf7ccaf5b2531e37476bcf.jpg?nii=t");
@@ -47,11 +53,7 @@
     }
 
     *{box-sizing:border-box}
-
-    html{
-      scroll-behavior:smooth;
-      background:var(--bg);
-    }
+    html{scroll-behavior:smooth;background:var(--bg)}
 
     body{
       margin:0;
@@ -87,19 +89,9 @@
       background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 24%,rgba(0,0,0,.30));
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    button,input,textarea{
-      font:inherit;
-    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button,input,textarea{font:inherit}
 
     .scroll-progress{
       position:fixed;
@@ -208,14 +200,8 @@
       transition:.24s ease;
     }
 
-    .nav-links a:hover{
-      color:#fff;
-    }
-
-    .nav-links a:hover:after{
-      transform:scaleX(1);
-      opacity:1;
-    }
+    .nav-links a:hover{color:#fff}
+    .nav-links a:hover:after{transform:scaleX(1);opacity:1}
 
     .nav-cta{
       padding:10px 16px;
@@ -281,9 +267,7 @@
       color:#fff;
     }
 
-    .nav.open .mobile-panel{
-      display:block;
-    }
+    .nav.open .mobile-panel{display:block}
 
     .hero{
       position:relative;
@@ -293,6 +277,7 @@
       padding:76px 0 58px;
       overflow:hidden;
       isolation:isolate;
+      background:#050505;
     }
 
     .hero:before{
@@ -300,10 +285,10 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 18% 18%,rgba(237,211,160,.15),transparent 28%),
-        radial-gradient(circle at 82% 24%,rgba(192,154,95,.18),transparent 34%),
+        radial-gradient(circle at 18% 18%,rgba(237,211,160,.13),transparent 28%),
+        radial-gradient(circle at 82% 24%,rgba(192,154,95,.10),transparent 34%),
         linear-gradient(180deg,#040404 0%,#0a0908 52%,#040404 100%);
-      z-index:-4;
+      z-index:-5;
     }
 
     .hero:after{
@@ -313,55 +298,59 @@
       right:-12%;
       bottom:-42%;
       height:72%;
-      background:radial-gradient(ellipse at center,rgba(192,154,95,.18),transparent 62%);
+      background:radial-gradient(ellipse at center,rgba(192,154,95,.16),transparent 62%);
       filter:blur(24px);
-      opacity:.58;
+      opacity:.48;
       z-index:-1;
       pointer-events:none;
     }
 
-    .hero-video-bg{
+    .hero-photo-bg{
       position:absolute;
       inset:0;
-      z-index:-3;
+      z-index:-4;
       overflow:hidden;
       pointer-events:none;
-      opacity:.9;
-      filter:saturate(.86) contrast(1.08);
+      background:#050505;
     }
 
-    .hero-video-bg iframe{
+    .hero-slide{
       position:absolute;
-      left:50%;
-      top:50%;
-      width:120vw;
-      height:120vh;
-      min-width:100%;
-      min-height:100%;
-      border:0;
-      transform:translate(-50%,-50%);
-      filter:saturate(.9) contrast(1.08) brightness(.72);
+      inset:0;
+      background-image:var(--slide);
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      transform:scale(1.035);
+      filter:saturate(.9) contrast(1.08) brightness(.82);
+      animation:heroPhotoSlider 30s infinite;
     }
 
-    .hero-video-bg:before{
+    .hero-slide:nth-child(1){animation-delay:0s}
+    .hero-slide:nth-child(2){animation-delay:6s}
+    .hero-slide:nth-child(3){animation-delay:12s}
+    .hero-slide:nth-child(4){animation-delay:18s}
+    .hero-slide:nth-child(5){animation-delay:24s}
+
+    .hero-photo-bg:before{
       content:"";
       position:absolute;
       inset:0;
       z-index:2;
       background:
-        linear-gradient(90deg,rgba(4,4,4,.94) 0%,rgba(4,4,4,.86) 28%,rgba(4,4,4,.58) 52%,rgba(4,4,4,.25) 78%,rgba(4,4,4,.18) 100%),
-        linear-gradient(180deg,rgba(4,4,4,.72) 0%,rgba(4,4,4,.08) 42%,rgba(4,4,4,.78) 100%);
+        linear-gradient(90deg,rgba(4,4,4,.95) 0%,rgba(4,4,4,.86) 30%,rgba(4,4,4,.48) 58%,rgba(4,4,4,.18) 82%,rgba(4,4,4,.12) 100%),
+        linear-gradient(180deg,rgba(4,4,4,.62) 0%,rgba(4,4,4,.04) 42%,rgba(4,4,4,.72) 100%);
       pointer-events:none;
     }
 
-    .hero-video-bg:after{
+    .hero-photo-bg:after{
       content:"";
       position:absolute;
       inset:0;
       z-index:3;
       background:
-        radial-gradient(circle at 28% 42%,rgba(0,0,0,.34) 0%,rgba(0,0,0,.18) 34%,rgba(0,0,0,.44) 100%),
-        linear-gradient(90deg,rgba(0,0,0,.28),transparent 72%);
+        radial-gradient(circle at 22% 44%,rgba(0,0,0,.22) 0%,rgba(0,0,0,.12) 36%,rgba(0,0,0,.30) 100%),
+        linear-gradient(90deg,rgba(0,0,0,.22),transparent 68%);
       pointer-events:none;
     }
 
@@ -371,7 +360,7 @@
       z-index:-1;
       pointer-events:none;
       background:
-        linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.86) 36%,rgba(4,4,4,.42) 64%,rgba(255,238,205,.05) 100%);
+        linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.84) 36%,rgba(4,4,4,.34) 66%,rgba(255,238,205,.035) 100%);
       animation:heroGlow 9s ease-in-out infinite;
     }
 
@@ -381,9 +370,7 @@
       align-items:center;
     }
 
-    .hero-copy{
-      max-width:650px;
-    }
+    .hero-copy{max-width:650px}
 
     .eyebrow{
       display:inline-flex;
@@ -409,9 +396,7 @@
       box-shadow:0 0 0 5px rgba(237,211,160,.10);
     }
 
-    h1,h2,h3,p{
-      margin-top:0;
-    }
+    h1,h2,h3,p{margin-top:0}
 
     h1{
       margin:0 0 18px;
@@ -425,10 +410,7 @@
       text-wrap:balance;
     }
 
-    .title-gold{
-      color:var(--gold2);
-      font-weight:500;
-    }
+    .title-gold{color:var(--gold2);font-weight:500}
 
     .lead{
       max-width:630px;
@@ -462,9 +444,7 @@
       border:0;
     }
 
-    .btn:hover{
-      transform:translateY(-2px);
-    }
+    .btn:hover{transform:translateY(-2px)}
 
     .btn-primary{
       background:linear-gradient(135deg,#fff2d4,var(--gold));
@@ -473,9 +453,7 @@
       box-shadow:0 14px 42px rgba(192,154,95,.22);
     }
 
-    .btn-primary:hover{
-      box-shadow:0 18px 56px rgba(192,154,95,.30);
-    }
+    .btn-primary:hover{box-shadow:0 18px 56px rgba(192,154,95,.30)}
 
     .btn-ghost{
       border:1px solid rgba(237,211,160,.20);
@@ -488,9 +466,7 @@
       background:rgba(192,154,95,.11);
     }
 
-    section{
-      padding:82px 0;
-    }
+    section{padding:82px 0}
 
     .section-head{
       display:grid;
@@ -1093,10 +1069,7 @@
       font-weight:300;
     }
 
-    .timeline{
-      display:grid;
-      gap:12px;
-    }
+    .timeline{display:grid;gap:12px}
 
     .step{
       display:grid;
@@ -1194,16 +1167,20 @@
 
     .qr-card{
       position:relative;
-      border:1px solid rgba(237,211,160,.15);
-      border-radius:30px;
+      width:100%;
+      max-width:420px;
+      justify-self:end;
+      border:1px solid rgba(237,211,160,.16);
+      border-radius:32px;
       background:
-        radial-gradient(circle at 22% 0%,rgba(237,211,160,.13),transparent 36%),
-        linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.018));
+        radial-gradient(circle at 50% -8%,rgba(237,211,160,.16),transparent 36%),
+        radial-gradient(circle at 96% 100%,rgba(192,154,95,.13),transparent 34%),
+        linear-gradient(180deg,rgba(255,255,255,.052),rgba(255,255,255,.018));
       padding:24px;
       box-shadow:0 24px 80px rgba(0,0,0,.30);
       overflow:hidden;
       display:grid;
-      gap:16px;
+      gap:18px;
     }
 
     .qr-card:before{
@@ -1211,8 +1188,8 @@
       position:absolute;
       inset:-1px;
       background:
-        radial-gradient(circle at 92% 100%,rgba(192,154,95,.12),transparent 34%),
-        linear-gradient(135deg,rgba(255,255,255,.035),transparent 50%);
+        linear-gradient(135deg,rgba(255,255,255,.04),transparent 42%),
+        linear-gradient(180deg,rgba(237,211,160,.06),transparent 55%);
       pointer-events:none;
     }
 
@@ -1221,11 +1198,17 @@
       z-index:1;
     }
 
+    .qr-top{
+      display:grid;
+      gap:10px;
+      text-align:left;
+    }
+
     .qr-note{
       width:max-content;
       display:inline-flex;
       padding:8px 11px;
-      border:1px solid rgba(237,211,160,.13);
+      border:1px solid rgba(237,211,160,.14);
       border-radius:999px;
       background:rgba(5,5,5,.46);
       color:#e5cfaa;
@@ -1254,26 +1237,46 @@
     }
 
     .qr-frame{
-      width:min(100%,220px);
+      width:min(100%,224px);
       aspect-ratio:1/1;
-      margin:4px auto 2px;
-      padding:12px;
-      border-radius:24px;
+      margin:0 auto;
+      padding:10px;
+      border-radius:26px;
       background:#fff8eb;
       box-shadow:
         0 22px 70px rgba(0,0,0,.34),
-        0 0 0 1px rgba(237,211,160,.16);
+        0 0 0 1px rgba(237,211,160,.16),
+        inset 0 0 0 1px rgba(0,0,0,.04);
     }
 
     .qr-frame img{
       width:100%;
       height:100%;
       object-fit:contain;
-      border-radius:14px;
+      border-radius:18px;
     }
 
     .qr-card .btn{
       width:100%;
+    }
+
+    .qr-mini{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      color:#8f8374;
+      font-size:12.5px;
+      line-height:1.45;
+      text-align:center;
+    }
+
+    .qr-mini:before,
+    .qr-mini:after{
+      content:"";
+      width:24px;
+      height:1px;
+      background:rgba(237,211,160,.14);
     }
 
     .contact-list{
@@ -1331,6 +1334,14 @@
     .delay-2{transition-delay:.16s}
     .delay-3{transition-delay:.24s}
 
+    @keyframes heroPhotoSlider{
+      0%{opacity:0;transform:scale(1.035)}
+      5%{opacity:1}
+      20%{opacity:1}
+      28%{opacity:0;transform:scale(1.09)}
+      100%{opacity:0;transform:scale(1.09)}
+    }
+
     @keyframes heroGlow{
       0%,100%{opacity:.82;transform:scale(1)}
       50%{opacity:1;transform:scale(1.015)}
@@ -1339,6 +1350,12 @@
     @keyframes brandSheen{
       0%,100%{background-position:0% center}
       50%{background-position:100% center}
+    }
+
+    @media (max-width:1180px){
+      .container{width:min(var(--max),calc(100% - 32px))}
+      .hero{min-height:calc(86vh - 76px)}
+      .qr-card{max-width:390px}
     }
 
     @media (max-width:1080px){
@@ -1351,6 +1368,11 @@
       .work-preview{min-height:460px}
       .process-layout{grid-template-columns:1fr}
       .process-card{min-height:420px}
+      .hero-photo-bg:before{
+        background:
+          linear-gradient(90deg,rgba(4,4,4,.95) 0%,rgba(4,4,4,.82) 38%,rgba(4,4,4,.42) 72%,rgba(4,4,4,.18) 100%),
+          linear-gradient(180deg,rgba(4,4,4,.66) 0%,rgba(4,4,4,.08) 42%,rgba(4,4,4,.76) 100%);
+      }
     }
 
     @media (max-width:920px){
@@ -1359,6 +1381,7 @@
       .brand{font-size:18px}
       .hero{min-height:auto;padding:56px 0 54px}
       .section-head,.contact-grid{grid-template-columns:1fr;gap:24px}
+      .qr-card{justify-self:stretch;max-width:none}
       .packages{grid-template-columns:1fr 1fr}
       .works-gallery{grid-template-columns:repeat(2,1fr)}
       .gallery-item,
@@ -1378,19 +1401,25 @@
       .offer-section{padding:72px 0}
     }
 
+    @media (max-width:720px){
+      .hero-photo-bg:before{
+        background:
+          linear-gradient(90deg,rgba(4,4,4,.96) 0%,rgba(4,4,4,.86) 54%,rgba(4,4,4,.48) 100%),
+          linear-gradient(180deg,rgba(4,4,4,.74) 0%,rgba(4,4,4,.18) 38%,rgba(4,4,4,.84) 100%);
+      }
+      .hero-slide{background-position:center}
+      .contact-grid{gap:28px}
+      .qr-card{padding:22px;border-radius:28px}
+      .qr-frame{width:min(100%,210px)}
+    }
+
     @media (max-width:640px){
       .container{width:min(100% - 24px,var(--max))}
       .nav-inner{height:66px}
       .mobile-panel{left:12px;right:12px;top:72px}
       .brand{font-size:16px;letter-spacing:.08em}
       .hero{padding:38px 0 42px;min-height:auto}
-      .hero-video-bg iframe{width:160vw;height:130vh;filter:saturate(.82) contrast(1.04) brightness(.58)}
-      .hero-video-bg:before{
-        background:
-          linear-gradient(90deg,rgba(4,4,4,.96) 0%,rgba(4,4,4,.88) 48%,rgba(4,4,4,.54) 100%),
-          linear-gradient(180deg,rgba(4,4,4,.78) 0%,rgba(4,4,4,.16) 38%,rgba(4,4,4,.84) 100%);
-      }
-      .hero-glow{background:linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.92) 48%,rgba(4,4,4,.64) 100%)}
+      .hero-glow{background:linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.92) 48%,rgba(4,4,4,.58) 100%)}
       .hero-copy{text-align:center}
       .eyebrow{font-size:9.5px;letter-spacing:.08em;line-height:1.35;margin-bottom:16px}
       h1{font-size:clamp(31px,8.8vw,40px);line-height:1.08;letter-spacing:-.046em;margin-bottom:16px}
@@ -1418,9 +1447,22 @@
       .contact-actions{display:grid;grid-template-columns:1fr}
       .contact-item{display:grid;gap:5px}
       .footer-bottom{margin-top:40px;flex-direction:column;align-items:flex-start}
-      .qr-card{padding:22px;border-radius:24px;text-align:center}
+      .qr-card{text-align:center}
+      .qr-top{text-align:center}
       .qr-note{margin:0 auto}
-      .qr-frame{width:min(100%,210px)}
+      .qr-mini:before,.qr-mini:after{width:18px}
+    }
+
+    @media (max-width:420px){
+      .container{width:min(100% - 20px,var(--max))}
+      .hero{padding:34px 0 38px}
+      .qr-card{padding:18px;border-radius:24px}
+      .qr-frame{width:min(100%,190px);border-radius:22px}
+      .qr-frame img{border-radius:15px}
+      .qr-card h3{font-size:21px}
+      .qr-card p{font-size:13.8px}
+      .work-preview{min-height:340px}
+      .gallery-item{min-height:210px}
     }
 
     @media (prefers-reduced-motion:reduce){
@@ -1429,6 +1471,7 @@
         transition:none!important;
         scroll-behavior:auto!important;
       }
+      .hero-slide:first-child{opacity:1}
     }
   </style>
 </head>
@@ -1466,8 +1509,12 @@
 
   <main id="top">
     <section class="hero">
-      <div class="hero-video-bg" aria-hidden="true">
-        <iframe src="https://player.vimeo.com/video/1207303984?background=1&autoplay=1&muted=1&loop=1&autopause=0&playsinline=1&controls=0" allow="autoplay; fullscreen; picture-in-picture" title="KMF Interior video background"></iframe>
+      <div class="hero-photo-bg" aria-hidden="true">
+        <div class="hero-slide" style="--slide:var(--hero1)"></div>
+        <div class="hero-slide" style="--slide:var(--hero2)"></div>
+        <div class="hero-slide" style="--slide:var(--hero3)"></div>
+        <div class="hero-slide" style="--slide:var(--hero4)"></div>
+        <div class="hero-slide" style="--slide:var(--hero5)"></div>
       </div>
 
       <div class="hero-glow"></div>
@@ -1773,17 +1820,17 @@
         </div>
 
         <div class="qr-card reveal delay-1">
-          <span class="qr-note">WhatsApp QR</span>
-
-          <h3>Сканируйте код и напишите нам</h3>
-
-          <p>
-            Откроется чат WhatsApp. Можно отправить фото объекта, планировку, размеры мебели или коротко описать задачу.
-          </p>
+          <div class="qr-top">
+            <span class="qr-note">WhatsApp QR</span>
+            <h3>Сканируйте код и напишите нам</h3>
+            <p>Откроется чат WhatsApp. Можно отправить фото объекта, планировку, размеры мебели или коротко описать задачу.</p>
+          </div>
 
           <div class="qr-frame">
-            <img src="http://qrcoder.ru/code/?https%3A%2F%2Fwa.me%2F77470268980&amp;4&amp;0" alt="QR-код для перехода в WhatsApp KMF Interior">
+            <img src="https://i.postimg.cc/cHkKpsPv/Dizajn-bez-nazvania-(1).png" alt="QR-код для перехода в WhatsApp KMF Interior">
           </div>
+
+          <div class="qr-mini">Быстрый переход в WhatsApp</div>
 
           <a class="btn btn-primary" href="https://wa.me/77470268980?text=Здравствуйте!%20Хочу%20обсудить%20ремонт%20и%20мебель%20на%20заказ" target="_blank" rel="noopener">Открыть WhatsApp</a>
         </div>
