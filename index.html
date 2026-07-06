@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#050505;
@@ -26,16 +27,32 @@
       --shadow:0 32px 110px rgba(0,0,0,.55);
       --radius:28px;
       --max:1180px;
+
       --logo:url("https://i.postimg.cc/9Mby4QGz/2a70fdea-27b0-4701-8bb7-8bf712da7c50.jpg");
-      --cover:url("https://avatars.mds.yandex.net/i?id=aa1a5fef4e90987d7ac5354d10179567_l-5906863-images-thumbs&n=13");
+
       --photo1:url("https://i.pinimg.com/originals/aa/34/a3/aa34a348218eb2324d8505ff69afcb55.jpg");
       --photo2:url("https://avatars.mds.yandex.net/i?id=3d72d14b6fb49426f63d17e0eff083ad_l-3699999-images-thumbs&n=13");
       --photo3:url("https://i.pinimg.com/originals/4a/6f/13/4a6f1360f3cf7ccaf5b2531e37476bcf.jpg?nii=t");
       --photo4:url("https://i.pinimg.com/originals/32/46/2b/32462b9451b614603d4fafb131f1fc8b.png");
+
+      --g1:url("https://avatars.mds.yandex.net/i?id=8d77b308ae22d355c8ff3845d0b6b7ce_l-12190492-images-thumbs&n=13");
+      --g2:url("https://i.pinimg.com/originals/dc/2f/d4/dc2fd40dabae43573b7c96327d6b1bce.jpg?nii=t");
+      --g3:url("https://avatars.mds.yandex.net/i?id=696c46f16d925182372e83ffe2a12d4f_l-4572045-images-thumbs&n=13");
+      --g4:url("https://i.pinimg.com/736x/c9/7e/ea/c97eea285f7cb33c7a5556552afe43b5.jpg");
+      --g5:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa_L4cXt0EAZN1h1_CcMRGToxbQIGla3uHH6u2vgs9afz5uUAlbMF4K1oq&s=10");
+      --g6:url("https://fabrika-stil.ru/_upload/models/site/preview/dekort-511/dekort-5111762959938.jpg");
+      --g7:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgC0TVGCQlL1uxxbAtwr-1WZfChcuv4PSWa0hNBTgwFx61jJubY7en0God&s=10");
+      --g8:url("https://megashkaf.ru/media-temp/img/goods/files_big/0shPKDmb2XMkgk7rK_G0jO0.jpg");
+      --g9:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmdrbkKML_luTS7gkUiJMTVukM4uypVdPWgrb-qzFFrm1IfZhw8egWQ-c&s=10");
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:var(--bg)}
+
+    html{
+      scroll-behavior:smooth;
+      background:var(--bg);
+    }
+
     body{
       margin:0;
       font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -49,6 +66,7 @@
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
+
     body:before{
       content:"";
       position:fixed;
@@ -59,6 +77,7 @@
       mix-blend-mode:soft-light;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.15' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.62'/%3E%3C/svg%3E");
     }
+
     body:after{
       content:"";
       position:fixed;
@@ -67,165 +86,1360 @@
       pointer-events:none;
       background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 24%,rgba(0,0,0,.30));
     }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    button,input,textarea{font:inherit}
 
-    .scroll-progress{position:fixed;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,#fff2d4,var(--gold),#6a4a28);z-index:100;box-shadow:0 0 22px rgba(192,154,95,.55)}
-    .container{width:min(var(--max),calc(100% - 40px));margin:0 auto;position:relative;z-index:1}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
 
-    .nav{position:sticky;top:0;z-index:60;background:rgba(4,4,4,.72);backdrop-filter:blur(22px);border-bottom:1px solid rgba(237,211,160,.10)}
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand{position:relative;display:flex;align-items:center;flex:0 0 auto;font-family:"Manrope","Inter",sans-serif;font-size:20px;font-weight:560;letter-spacing:.11em;text-transform:uppercase;line-height:1;background:linear-gradient(90deg,#fff7ea 0%,#efd4a1 38%,#c09a5f 58%,#fff7ea 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 14px 42px rgba(192,154,95,.16);animation:brandSheen 5.4s ease-in-out infinite;transition:letter-spacing .24s ease,filter .24s ease}
-    .brand:after{content:"";position:absolute;left:2px;right:2px;bottom:-9px;height:1px;background:linear-gradient(90deg,transparent,rgba(237,211,160,.78),transparent);transform:scaleX(.72);opacity:.62;transition:transform .24s ease,opacity .24s ease}
-    .brand:hover{letter-spacing:.13em;filter:drop-shadow(0 0 16px rgba(192,154,95,.22))}
-    .brand:hover:after{transform:scaleX(1);opacity:.95}
-    .nav-links{display:flex;align-items:center;gap:22px;color:#c5b9a8;font-size:13.5px;font-weight:400}
-    .nav-links a{position:relative;transition:color .22s ease}
-    .nav-links a:not(.nav-cta):after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:linear-gradient(90deg,var(--gold2),var(--gold),transparent);transform:scaleX(0);transform-origin:left;opacity:0;transition:.24s ease}
-    .nav-links a:hover{color:#fff}
-    .nav-links a:hover:after{transform:scaleX(1);opacity:1}
-    .nav-cta{padding:10px 16px;border:1px solid rgba(237,211,160,.30);border-radius:999px;color:#fff!important;background:rgba(192,154,95,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.03);transition:.22s ease}
-    .nav-cta:hover{border-color:rgba(237,211,160,.54);background:rgba(192,154,95,.18);transform:translateY(-1px)}
-    .burger{display:none;width:44px;height:44px;border:1px solid rgba(237,211,160,.16);border-radius:999px;background:rgba(255,255,255,.03);color:#fff;align-items:center;justify-content:center;gap:4px;flex-direction:column;cursor:pointer}
-    .burger span{width:17px;height:1px;background:#f8e8c9;transition:.24s ease}
-    .mobile-panel{display:none;position:absolute;left:20px;right:20px;top:82px;padding:16px;border:1px solid rgba(237,211,160,.15);border-radius:22px;background:rgba(8,8,8,.96);box-shadow:var(--shadow)}
-    .mobile-panel a{display:block;padding:14px;border-radius:14px;color:#d8cbb9;font-size:14px}
-    .mobile-panel a:hover{background:rgba(192,154,95,.12);color:#fff}
-    .nav.open .mobile-panel{display:block}
+    img{
+      max-width:100%;
+      display:block;
+    }
 
-    .hero{position:relative;min-height:calc(92vh - 76px);display:flex;align-items:center;padding:76px 0 58px;overflow:hidden;isolation:isolate}
-    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 22% 18%,rgba(237,211,160,.12),transparent 26%),radial-gradient(circle at 76% 26%,rgba(192,154,95,.13),transparent 30%),linear-gradient(180deg,#040404 0%,#0a0908 52%,#040404 100%);z-index:-3}
-    .hero:after{content:"";position:absolute;left:-12%;right:-12%;bottom:-42%;height:72%;background:radial-gradient(ellipse at center,rgba(192,154,95,.18),transparent 62%);filter:blur(24px);opacity:.58;z-index:-1;pointer-events:none}
-    .hero-video-bg{position:absolute;top:0;right:0;bottom:0;width:min(62vw,940px);z-index:-2;overflow:hidden;pointer-events:none;opacity:.74;filter:saturate(.84) contrast(1.05);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.65) 12%,#000 30%,#000 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.65) 12%,#000 30%,#000 100%)}
-    .hero-video-bg iframe{position:absolute;left:50%;top:50%;width:120%;height:120%;min-width:100%;min-height:100%;border:0;transform:translate(-50%,-50%);filter:saturate(.92) contrast(1.08) brightness(.78)}
-    .hero-video-bg:before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(4,4,4,0) 0%,rgba(4,4,4,.18) 18%,rgba(4,4,4,.08) 52%,rgba(4,4,4,.62) 100%),linear-gradient(180deg,rgba(4,4,4,.78) 0%,rgba(4,4,4,.08) 34%,rgba(4,4,4,.74) 100%);pointer-events:none}
-    .hero-video-bg:after{content:"";position:absolute;inset:0;z-index:3;background:radial-gradient(circle at 36% 42%,transparent 0%,rgba(4,4,4,.16) 44%,rgba(4,4,4,.58) 100%);pointer-events:none}
-    .hero-glow{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.90) 34%,rgba(4,4,4,.50) 57%,rgba(4,4,4,.15) 78%,rgba(4,4,4,.50) 100%);animation:heroGlow 9s ease-in-out infinite}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,720px);align-items:center}
-    .hero-copy{max-width:650px}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;padding:8px 12px;border:1px solid rgba(237,211,160,.16);border-radius:999px;background:rgba(255,255,255,.035);color:#d6c5ad;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-    .eyebrow i{width:6px;height:6px;border-radius:999px;background:var(--gold2);box-shadow:0 0 0 5px rgba(237,211,160,.10)}
-    h1,h2,h3,p{margin-top:0}
-    h1{margin:0 0 18px;font-family:"Manrope","Inter",sans-serif;font-size:clamp(31px,3.55vw,48px);line-height:1.08;font-weight:500;letter-spacing:-.048em;color:#fff7ea;max-width:650px;text-wrap:balance}
-    .title-gold{color:var(--gold2);font-weight:500}
-    .lead{max-width:630px;margin:0;color:#c9bdad;font-size:clamp(16px,1.45vw,18px);line-height:1.68;font-weight:300;letter-spacing:-.012em}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;font-size:14px;font-weight:500;letter-spacing:-.004em;transition:transform .22s ease,border-color .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease;cursor:pointer;border:0}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:linear-gradient(135deg,#fff2d4,var(--gold));color:#090806;border:1px solid rgba(255,255,255,.18);box-shadow:0 14px 42px rgba(192,154,95,.22)}
-    .btn-primary:hover{box-shadow:0 18px 56px rgba(192,154,95,.30)}
-    .btn-ghost{border:1px solid rgba(237,211,160,.20);color:#f6ead8;background:rgba(255,255,255,.035)}
-    .btn-ghost:hover{border-color:rgba(237,211,160,.40);background:rgba(192,154,95,.11)}
+    button,input,textarea{
+      font:inherit;
+    }
 
-    .stats-band{position:relative;margin:-24px 0 70px;z-index:5}
-    .stats-shell{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(237,211,160,.16);border-radius:30px;background:linear-gradient(180deg,rgba(16,15,13,.98),rgba(6,6,6,.98));box-shadow:0 28px 88px rgba(0,0,0,.44);overflow:hidden}
-    .stat{min-height:150px;padding:26px 22px;border-right:1px solid rgba(237,211,160,.09);position:relative;overflow:hidden;transition:.28s ease}
-    .stat:last-child{border-right:0}
-    .stat:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(237,211,160,.12),transparent 36%);opacity:0;transition:.28s ease}
-    .stat:hover{transform:translateY(-4px);background:rgba(255,255,255,.028)}
-    .stat:hover:before{opacity:1}
-    .stat b{position:relative;z-index:1;display:block;margin-bottom:14px;color:#fff7ea;font-family:"Manrope","Inter",sans-serif;font-size:clamp(32px,3.4vw,44px);line-height:.95;font-weight:500;letter-spacing:-.05em}
-    .stat span{position:relative;z-index:1;color:#a99d8d;font-size:13.5px;line-height:1.45;font-weight:300}
+    .scroll-progress{
+      position:fixed;
+      left:0;
+      top:0;
+      height:2px;
+      width:0;
+      background:linear-gradient(90deg,#fff2d4,var(--gold),#6a4a28);
+      z-index:100;
+      box-shadow:0 0 22px rgba(192,154,95,.55);
+    }
 
-    section{padding:82px 0}
-    .section-head{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:56px;align-items:end;margin-bottom:34px}
-    .kicker{margin-bottom:13px;color:#d6ad71;font-size:11px;text-transform:uppercase;letter-spacing:.17em;font-weight:700}
-    h2{margin:0;font-family:"Manrope","Inter",sans-serif;font-size:clamp(28px,3.1vw,44px);line-height:1.12;font-weight:500;letter-spacing:-.045em;color:#fff7ea;text-wrap:balance}
-    .section-copy{margin:0;color:#b7ab9b;font-size:16px;line-height:1.72;font-weight:300;letter-spacing:-.006em}
+    .container{
+      width:min(var(--max),calc(100% - 40px));
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
 
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .service-card{position:relative;min-height:290px;padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.028);overflow:hidden;transition:.30s cubic-bezier(.22,1,.36,1)}
-    .service-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 26% 0%,rgba(192,154,95,.22),transparent 42%);opacity:0;transition:.28s ease}
-    .service-card:hover{transform:translateY(-6px);border-color:rgba(237,211,160,.26);background:rgba(255,255,255,.042);box-shadow:0 24px 70px rgba(0,0,0,.24)}
-    .service-card:hover:before{opacity:1}
-    .service-card>*{position:relative;z-index:1}
-    .service-num{display:inline-flex;margin-bottom:28px;color:#d6ad71;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
-    .service-card h3,.package h3,.step h3,.portfolio-body h3{margin:0 0 12px;font-family:"Manrope","Inter",sans-serif;font-size:21px;line-height:1.22;font-weight:550;letter-spacing:-.035em;color:#fff}
-    .service-card p,.package p,.step p,.portfolio-body p{margin:0;color:#aca192;font-size:15px;line-height:1.68;font-weight:300}
-    .service-list{display:grid;gap:10px;margin-top:24px;padding:0;list-style:none}
-    .service-list li{position:relative;padding-left:18px;color:#d2c5b4;font-size:13.5px;line-height:1.42}
-    .service-list li:before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(4,4,4,.72);
+      backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(237,211,160,.10);
+    }
 
-    .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .portfolio-card{position:relative;min-height:430px;border:1px solid var(--line);border-radius:30px;background:#090909;overflow:hidden;box-shadow:0 22px 70px rgba(0,0,0,.24);transition:.36s cubic-bezier(.22,1,.36,1)}
-    .portfolio-card:before{content:"";position:absolute;inset:0;background:var(--img);background-size:cover;background-position:center;filter:saturate(.88) contrast(1.04);transform:scale(1.015);transition:.7s ease}
-    .portfolio-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.25) 44%,rgba(0,0,0,.88)),radial-gradient(circle at 20% 0%,rgba(237,211,160,.18),transparent 34%)}
-    .portfolio-card:hover{transform:translateY(-7px);border-color:rgba(237,211,160,.32);box-shadow:0 34px 100px rgba(0,0,0,.40)}
-    .portfolio-card:hover:before{transform:scale(1.07);filter:saturate(.98) contrast(1.08)}
-    .portfolio-body{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:24px}
-    .portfolio-body span{display:inline-flex;margin-bottom:12px;padding:7px 10px;border:1px solid rgba(237,211,160,.16);border-radius:999px;background:rgba(8,8,8,.58);color:#e7c488;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+    .nav-inner{
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+    }
 
-    .offer-section{position:relative;margin:28px 0;padding:92px 0;background:#040404;border-top:1px solid rgba(237,211,160,.10);border-bottom:1px solid rgba(237,211,160,.10);overflow:hidden}
-    .offer-section:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(192,154,95,.23),transparent 34%),radial-gradient(circle at 90% 20%,rgba(237,211,160,.12),transparent 30%),linear-gradient(180deg,rgba(255,255,255,.018),transparent);pointer-events:none}
-    .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
-    .package{position:relative;padding:28px;border:1px solid rgba(237,211,160,.13);border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.042),rgba(255,255,255,.018));box-shadow:0 24px 76px rgba(0,0,0,.22);overflow:hidden;transition:.30s ease}
-    .package:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);opacity:.38}
-    .package.featured{border-color:rgba(237,211,160,.32);background:linear-gradient(180deg,rgba(192,154,95,.13),rgba(255,255,255,.025))}
-    .package:hover{transform:translateY(-5px);border-color:rgba(237,211,160,.34)}
-    .package-label{display:inline-flex;margin-bottom:22px;color:#d6ad71;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:700}
-    .package ul{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:11px}
-    .package li{position:relative;padding-left:22px;color:#d8cab7;font-size:14px;line-height:1.45}
-    .package li:before{content:"✓";position:absolute;left:0;top:0;color:var(--gold2)}
+    .brand{
+      position:relative;
+      display:flex;
+      align-items:center;
+      flex:0 0 auto;
+      font-family:"Manrope","Inter",sans-serif;
+      font-size:20px;
+      font-weight:560;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      line-height:1;
+      background:linear-gradient(90deg,#fff7ea 0%,#efd4a1 38%,#c09a5f 58%,#fff7ea 100%);
+      background-size:220% auto;
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:0 14px 42px rgba(192,154,95,.16);
+      animation:brandSheen 5.4s ease-in-out infinite;
+      transition:letter-spacing .24s ease,filter .24s ease;
+    }
 
-    .process-layout{display:grid;grid-template-columns:.92fr 1.08fr;gap:18px;align-items:stretch}
-    .process-card{position:relative;min-height:520px;border:1px solid rgba(237,211,160,.14);border-radius:32px;overflow:hidden;background:#090909;box-shadow:0 24px 86px rgba(0,0,0,.26)}
-    .process-card:before{content:"";position:absolute;inset:0;background:var(--photo2);background-size:cover;background-position:center;filter:saturate(.88) contrast(1.03);transform:scale(1.02)}
-    .process-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.14),rgba(0,0,0,.82))}
-    .process-card-content{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:30px}
-    .process-card-content h3{margin:0 0 12px;font-family:"Manrope","Inter",sans-serif;color:#fff;font-size:28px;line-height:1.12;letter-spacing:-.045em;font-weight:500}
-    .process-card-content p{margin:0;color:#d4c7b5;font-size:15.5px;line-height:1.65;font-weight:300}
-    .timeline{display:grid;gap:12px}
-    .step{display:grid;grid-template-columns:116px 1fr;gap:24px;padding:24px 26px;background:rgba(255,255,255,.027);border:1px solid var(--line);border-radius:24px;transition:.25s ease}
-    .step:hover{transform:translateX(5px);border-color:rgba(237,211,160,.28);background:rgba(192,154,95,.07)}
-    .step-num{color:#d6ad71;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding-top:5px}
+    .brand:after{
+      content:"";
+      position:absolute;
+      left:2px;
+      right:2px;
+      bottom:-9px;
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(237,211,160,.78),transparent);
+      transform:scaleX(.72);
+      opacity:.62;
+      transition:transform .24s ease,opacity .24s ease;
+    }
 
-    .contact{position:relative;margin-top:70px;background:#030303;border-top:1px solid rgba(237,211,160,.10);overflow:hidden}
-    .contact:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(192,154,95,.25),transparent 34%),radial-gradient(circle at 88% 20%,rgba(237,211,160,.10),transparent 30%);pointer-events:none}
-    .contact-inner{position:relative;z-index:1;padding:78px 0 34px}
-    .contact-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:54px;align-items:start}
-    .contact h2{font-size:clamp(30px,3.7vw,52px);max-width:760px;margin-bottom:20px}
-    .contact-lead{max-width:680px;color:#bcae9c;font-size:16.5px;line-height:1.75;font-weight:300;margin:0 0 28px}
-    .contact-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .qr-card{position:relative;border:1px solid rgba(237,211,160,.15);border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.048),rgba(255,255,255,.018));padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.30);overflow:hidden}
-    .qr-card:before{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 24% 0%,rgba(237,211,160,.16),transparent 36%),radial-gradient(circle at 92% 100%,rgba(192,154,95,.12),transparent 34%);pointer-events:none}
-    .qr-card>*{position:relative;z-index:1}
-    .qr-card h3{margin:0 0 10px;color:#fff;font-family:"Manrope","Inter",sans-serif;font-size:24px;line-height:1.18;font-weight:500;letter-spacing:-.035em}
-    .qr-card p{margin:0 0 18px;color:#bcae9c;font-size:14.5px;line-height:1.62;font-weight:300}
-    .qr-frame{width:min(100%,250px);aspect-ratio:1/1;margin:0 0 22px;padding:12px;border-radius:24px;background:#fff8eb;box-shadow:0 22px 70px rgba(0,0,0,.34),0 0 0 1px rgba(237,211,160,.16)}
-    .qr-frame img{width:100%;height:100%;object-fit:contain;border-radius:14px}
-    .qr-note{display:inline-flex;margin-bottom:18px;padding:8px 11px;border:1px solid rgba(237,211,160,.13);border-radius:999px;background:rgba(5,5,5,.46);color:#e5cfaa;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
-    .contact-list{display:grid;gap:10px;margin-top:24px;max-width:540px}
-    .contact-item{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(237,211,160,.10);color:#e2d4c1;font-size:14.5px}
-    .contact-item span{color:#83786a;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
-    .footer-bottom{position:relative;z-index:1;margin-top:56px;padding-top:22px;border-top:1px solid rgba(237,211,160,.09);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#746b60;font-size:13px;line-height:1.55}
+    .brand:hover{
+      letter-spacing:.13em;
+      filter:drop-shadow(0 0 16px rgba(192,154,95,.22));
+    }
 
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
-    @keyframes heroGlow{0%,100%{opacity:.82;transform:scale(1)}50%{opacity:1;transform:scale(1.015)}}
-    @keyframes brandSheen{0%,100%{background-position:0% center}50%{background-position:100% center}}
+    .brand:hover:after{
+      transform:scaleX(1);
+      opacity:.95;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      color:#c5b9a8;
+      font-size:13.5px;
+      font-weight:400;
+    }
+
+    .nav-links a{
+      position:relative;
+      transition:color .22s ease;
+    }
+
+    .nav-links a:not(.nav-cta):after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-7px;
+      height:1px;
+      background:linear-gradient(90deg,var(--gold2),var(--gold),transparent);
+      transform:scaleX(0);
+      transform-origin:left;
+      opacity:0;
+      transition:.24s ease;
+    }
+
+    .nav-links a:hover{
+      color:#fff;
+    }
+
+    .nav-links a:hover:after{
+      transform:scaleX(1);
+      opacity:1;
+    }
+
+    .nav-cta{
+      padding:10px 16px;
+      border:1px solid rgba(237,211,160,.30);
+      border-radius:999px;
+      color:#fff!important;
+      background:rgba(192,154,95,.12);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.03);
+      transition:.22s ease;
+    }
+
+    .nav-cta:hover{
+      border-color:rgba(237,211,160,.54);
+      background:rgba(192,154,95,.18);
+      transform:translateY(-1px);
+    }
+
+    .burger{
+      display:none;
+      width:44px;
+      height:44px;
+      border:1px solid rgba(237,211,160,.16);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
+      flex-direction:column;
+      cursor:pointer;
+    }
+
+    .burger span{
+      width:17px;
+      height:1px;
+      background:#f8e8c9;
+      transition:.24s ease;
+    }
+
+    .mobile-panel{
+      display:none;
+      position:absolute;
+      left:20px;
+      right:20px;
+      top:82px;
+      padding:16px;
+      border:1px solid rgba(237,211,160,.15);
+      border-radius:22px;
+      background:rgba(8,8,8,.96);
+      box-shadow:var(--shadow);
+    }
+
+    .mobile-panel a{
+      display:block;
+      padding:14px;
+      border-radius:14px;
+      color:#d8cbb9;
+      font-size:14px;
+    }
+
+    .mobile-panel a:hover{
+      background:rgba(192,154,95,.12);
+      color:#fff;
+    }
+
+    .nav.open .mobile-panel{
+      display:block;
+    }
+
+    .hero{
+      position:relative;
+      min-height:calc(92vh - 76px);
+      display:flex;
+      align-items:center;
+      padding:76px 0 58px;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 18% 18%,rgba(237,211,160,.15),transparent 28%),
+        radial-gradient(circle at 82% 24%,rgba(192,154,95,.18),transparent 34%),
+        linear-gradient(180deg,#040404 0%,#0a0908 52%,#040404 100%);
+      z-index:-4;
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      left:-12%;
+      right:-12%;
+      bottom:-42%;
+      height:72%;
+      background:radial-gradient(ellipse at center,rgba(192,154,95,.18),transparent 62%);
+      filter:blur(24px);
+      opacity:.58;
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .hero-video-bg{
+      position:absolute;
+      inset:0;
+      z-index:-3;
+      overflow:hidden;
+      pointer-events:none;
+      opacity:.9;
+      filter:saturate(.86) contrast(1.08);
+    }
+
+    .hero-video-bg iframe{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:120vw;
+      height:120vh;
+      min-width:100%;
+      min-height:100%;
+      border:0;
+      transform:translate(-50%,-50%);
+      filter:saturate(.9) contrast(1.08) brightness(.72);
+    }
+
+    .hero-video-bg:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:2;
+      background:
+        linear-gradient(90deg,rgba(4,4,4,.94) 0%,rgba(4,4,4,.86) 28%,rgba(4,4,4,.58) 52%,rgba(4,4,4,.25) 78%,rgba(4,4,4,.18) 100%),
+        linear-gradient(180deg,rgba(4,4,4,.72) 0%,rgba(4,4,4,.08) 42%,rgba(4,4,4,.78) 100%);
+      pointer-events:none;
+    }
+
+    .hero-video-bg:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:3;
+      background:
+        radial-gradient(circle at 28% 42%,rgba(0,0,0,.34) 0%,rgba(0,0,0,.18) 34%,rgba(0,0,0,.44) 100%),
+        linear-gradient(90deg,rgba(0,0,0,.28),transparent 72%);
+      pointer-events:none;
+    }
+
+    .hero-glow{
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+      background:
+        linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.86) 36%,rgba(4,4,4,.42) 64%,rgba(255,238,205,.05) 100%);
+      animation:heroGlow 9s ease-in-out infinite;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,720px);
+      align-items:center;
+    }
+
+    .hero-copy{
+      max-width:650px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:18px;
+      padding:8px 12px;
+      border:1px solid rgba(237,211,160,.16);
+      border-radius:999px;
+      background:rgba(255,255,255,.035);
+      color:#d6c5ad;
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow i{
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      background:var(--gold2);
+      box-shadow:0 0 0 5px rgba(237,211,160,.10);
+    }
+
+    h1,h2,h3,p{
+      margin-top:0;
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-family:"Manrope","Inter",sans-serif;
+      font-size:clamp(31px,3.55vw,48px);
+      line-height:1.08;
+      font-weight:500;
+      letter-spacing:-.048em;
+      color:#fff7ea;
+      max-width:650px;
+      text-wrap:balance;
+    }
+
+    .title-gold{
+      color:var(--gold2);
+      font-weight:500;
+    }
+
+    .lead{
+      max-width:630px;
+      margin:0;
+      color:#c9bdad;
+      font-size:clamp(16px,1.45vw,18px);
+      line-height:1.68;
+      font-weight:300;
+      letter-spacing:-.012em;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 22px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:-.004em;
+      transition:transform .22s ease,border-color .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease;
+      cursor:pointer;
+      border:0;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#fff2d4,var(--gold));
+      color:#090806;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 14px 42px rgba(192,154,95,.22);
+    }
+
+    .btn-primary:hover{
+      box-shadow:0 18px 56px rgba(192,154,95,.30);
+    }
+
+    .btn-ghost{
+      border:1px solid rgba(237,211,160,.20);
+      color:#f6ead8;
+      background:rgba(255,255,255,.035);
+    }
+
+    .btn-ghost:hover{
+      border-color:rgba(237,211,160,.40);
+      background:rgba(192,154,95,.11);
+    }
+
+    section{
+      padding:82px 0;
+    }
+
+    .section-head{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);
+      gap:56px;
+      align-items:end;
+      margin-bottom:34px;
+    }
+
+    .kicker{
+      margin-bottom:13px;
+      color:#d6ad71;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.17em;
+      font-weight:700;
+    }
+
+    h2{
+      margin:0;
+      font-family:"Manrope","Inter",sans-serif;
+      font-size:clamp(28px,3.1vw,44px);
+      line-height:1.12;
+      font-weight:500;
+      letter-spacing:-.045em;
+      color:#fff7ea;
+      text-wrap:balance;
+    }
+
+    .section-copy{
+      margin:0;
+      color:#b7ab9b;
+      font-size:16px;
+      line-height:1.72;
+      font-weight:300;
+      letter-spacing:-.006em;
+    }
+
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .portfolio-card{
+      position:relative;
+      min-height:430px;
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:#090909;
+      overflow:hidden;
+      box-shadow:0 22px 70px rgba(0,0,0,.24);
+      transition:.36s cubic-bezier(.22,1,.36,1);
+    }
+
+    .portfolio-card:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:var(--img);
+      background-size:cover;
+      background-position:center;
+      filter:saturate(.88) contrast(1.04);
+      transform:scale(1.015);
+      transition:.7s ease;
+    }
+
+    .portfolio-card:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.25) 44%,rgba(0,0,0,.88)),radial-gradient(circle at 20% 0%,rgba(237,211,160,.18),transparent 34%);
+    }
+
+    .portfolio-card:hover{
+      transform:translateY(-7px);
+      border-color:rgba(237,211,160,.32);
+      box-shadow:0 34px 100px rgba(0,0,0,.40);
+    }
+
+    .portfolio-card:hover:before{
+      transform:scale(1.07);
+      filter:saturate(.98) contrast(1.08);
+    }
+
+    .portfolio-body{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:1;
+      padding:24px;
+    }
+
+    .portfolio-body span{
+      display:inline-flex;
+      margin-bottom:12px;
+      padding:7px 10px;
+      border:1px solid rgba(237,211,160,.16);
+      border-radius:999px;
+      background:rgba(8,8,8,.58);
+      color:#e7c488;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:700;
+    }
+
+    .portfolio-body h3{
+      margin:0 0 12px;
+      font-family:"Manrope","Inter",sans-serif;
+      font-size:21px;
+      line-height:1.22;
+      font-weight:550;
+      letter-spacing:-.035em;
+      color:#fff;
+    }
+
+    .portfolio-body p{
+      margin:0;
+      color:#aca192;
+      font-size:15px;
+      line-height:1.68;
+      font-weight:300;
+    }
+
+    .work-showcase{
+      display:grid;
+      grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);
+      gap:16px;
+      align-items:stretch;
+    }
+
+    .work-panel{
+      position:relative;
+      min-height:560px;
+      padding:30px;
+      border:1px solid rgba(237,211,160,.15);
+      border-radius:34px;
+      background:
+        radial-gradient(circle at 12% 0%,rgba(237,211,160,.12),transparent 35%),
+        linear-gradient(180deg,rgba(255,255,255,.046),rgba(255,255,255,.018));
+      box-shadow:0 24px 80px rgba(0,0,0,.28);
+      overflow:hidden;
+    }
+
+    .work-panel:before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(circle at 86% 14%,rgba(192,154,95,.16),transparent 35%),
+        linear-gradient(135deg,rgba(255,255,255,.035),transparent 46%);
+      pointer-events:none;
+    }
+
+    .work-panel > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .work-badge{
+      display:inline-flex;
+      margin-bottom:22px;
+      padding:8px 11px;
+      border:1px solid rgba(237,211,160,.14);
+      border-radius:999px;
+      background:rgba(5,5,5,.42);
+      color:#e5cfaa;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-weight:700;
+    }
+
+    .work-panel h3{
+      margin:0 0 14px;
+      max-width:480px;
+      font-family:"Manrope","Inter",sans-serif;
+      color:#fff;
+      font-size:clamp(25px,2.5vw,34px);
+      line-height:1.12;
+      letter-spacing:-.05em;
+      font-weight:500;
+    }
+
+    .work-panel p{
+      margin:0;
+      max-width:520px;
+      color:#c7b9a7;
+      font-size:15.5px;
+      line-height:1.72;
+      font-weight:300;
+    }
+
+    .work-chips{
+      display:grid;
+      gap:10px;
+      margin-top:28px;
+    }
+
+    .work-chip{
+      position:relative;
+      width:100%;
+      display:grid;
+      grid-template-columns:44px 1fr;
+      gap:14px;
+      align-items:center;
+      padding:14px;
+      border:1px solid rgba(237,211,160,.12);
+      border-radius:20px;
+      background:rgba(255,255,255,.026);
+      color:#fff;
+      text-align:left;
+      cursor:pointer;
+      transition:.24s ease;
+    }
+
+    .work-chip:hover,
+    .work-chip.active{
+      transform:translateX(4px);
+      border-color:rgba(237,211,160,.32);
+      background:rgba(192,154,95,.10);
+    }
+
+    .work-chip b{
+      width:44px;
+      height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:16px;
+      background:linear-gradient(135deg,rgba(237,211,160,.20),rgba(192,154,95,.08));
+      color:#efd4a1;
+      font-size:13px;
+      letter-spacing:.08em;
+      font-weight:700;
+    }
+
+    .work-chip span{
+      display:block;
+      margin-bottom:4px;
+      color:#fff7ea;
+      font-size:15px;
+      font-weight:560;
+      letter-spacing:-.012em;
+    }
+
+    .work-chip small{
+      display:block;
+      color:#9f9384;
+      font-size:12.8px;
+      line-height:1.42;
+      font-weight:300;
+    }
+
+    .work-preview{
+      position:relative;
+      min-height:560px;
+      border:1px solid rgba(237,211,160,.15);
+      border-radius:34px;
+      overflow:hidden;
+      background:#080808;
+      box-shadow:0 24px 86px rgba(0,0,0,.30);
+    }
+
+    .work-preview:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:var(--work-img,var(--g1));
+      background-size:cover;
+      background-position:center;
+      filter:saturate(.9) contrast(1.05);
+      transform:scale(1.02);
+      transition:.55s ease;
+    }
+
+    .work-preview:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.22) 42%,rgba(0,0,0,.88)),
+        radial-gradient(circle at 16% 0%,rgba(237,211,160,.22),transparent 36%);
+    }
+
+    .work-preview:hover:before{
+      transform:scale(1.075);
+      filter:saturate(1) contrast(1.08);
+    }
+
+    .work-preview-content{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:1;
+      padding:30px;
+    }
+
+    .work-preview-content span{
+      display:inline-flex;
+      margin-bottom:14px;
+      padding:8px 10px;
+      border:1px solid rgba(237,211,160,.16);
+      border-radius:999px;
+      background:rgba(6,6,6,.54);
+      color:#e7c488;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-weight:700;
+    }
+
+    .work-preview-content h3{
+      margin:0 0 12px;
+      font-family:"Manrope","Inter",sans-serif;
+      color:#fff;
+      font-size:30px;
+      line-height:1.12;
+      letter-spacing:-.045em;
+      font-weight:500;
+    }
+
+    .work-preview-content p{
+      margin:0;
+      max-width:560px;
+      color:#d7cabb;
+      font-size:15px;
+      line-height:1.62;
+      font-weight:300;
+    }
+
+    .category-strip{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:18px;
+    }
+
+    .category-strip span{
+      display:inline-flex;
+      padding:8px 11px;
+      border:1px solid rgba(237,211,160,.12);
+      border-radius:999px;
+      background:rgba(5,5,5,.42);
+      color:#d8c6aa;
+      font-size:12px;
+      line-height:1;
+    }
+
+    .works-gallery{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .gallery-item{
+      position:relative;
+      min-height:180px;
+      border:1px solid rgba(237,211,160,.13);
+      border-radius:24px;
+      overflow:hidden;
+      background:#0a0a0a;
+      box-shadow:0 18px 56px rgba(0,0,0,.22);
+      transition:.3s cubic-bezier(.22,1,.36,1);
+    }
+
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(6){
+      grid-column:span 2;
+      min-height:230px;
+    }
+
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(5){
+      grid-column:span 2;
+    }
+
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(7),
+    .gallery-item:nth-child(8),
+    .gallery-item:nth-child(9){
+      grid-column:span 2;
+    }
+
+    .gallery-item:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:var(--img);
+      background-size:cover;
+      background-position:center;
+      filter:saturate(.9) contrast(1.05);
+      transform:scale(1.02);
+      transition:.55s ease;
+    }
+
+    .gallery-item:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.10) 42%,rgba(0,0,0,.78));
+    }
+
+    .gallery-item:hover{
+      transform:translateY(-5px);
+      border-color:rgba(237,211,160,.32);
+      box-shadow:0 28px 86px rgba(0,0,0,.34);
+    }
+
+    .gallery-item:hover:before{
+      transform:scale(1.08);
+      filter:saturate(1) contrast(1.08);
+    }
+
+    .gallery-item span{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      z-index:1;
+      color:#fff6e5;
+      font-size:14px;
+      font-weight:560;
+      letter-spacing:-.014em;
+    }
+
+    .offer-section{
+      position:relative;
+      margin:28px 0;
+      padding:92px 0;
+      background:#040404;
+      border-top:1px solid rgba(237,211,160,.10);
+      border-bottom:1px solid rgba(237,211,160,.10);
+      overflow:hidden;
+    }
+
+    .offer-section:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 18% 0%,rgba(192,154,95,.23),transparent 34%),radial-gradient(circle at 90% 20%,rgba(237,211,160,.12),transparent 30%),linear-gradient(180deg,rgba(255,255,255,.018),transparent);
+      pointer-events:none;
+    }
+
+    .packages{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:34px;
+    }
+
+    .package{
+      position:relative;
+      padding:28px;
+      border:1px solid rgba(237,211,160,.13);
+      border-radius:30px;
+      background:linear-gradient(180deg,rgba(255,255,255,.042),rgba(255,255,255,.018));
+      box-shadow:0 24px 76px rgba(0,0,0,.22);
+      overflow:hidden;
+      transition:.30s ease;
+    }
+
+    .package:before{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      top:0;
+      height:1px;
+      background:linear-gradient(90deg,transparent,var(--gold2),transparent);
+      opacity:.38;
+    }
+
+    .package.featured{
+      border-color:rgba(237,211,160,.32);
+      background:linear-gradient(180deg,rgba(192,154,95,.13),rgba(255,255,255,.025));
+    }
+
+    .package:hover{
+      transform:translateY(-5px);
+      border-color:rgba(237,211,160,.34);
+    }
+
+    .package-label{
+      display:inline-flex;
+      margin-bottom:22px;
+      color:#d6ad71;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:700;
+    }
+
+    .package h3{
+      margin:0 0 12px;
+      font-family:"Manrope","Inter",sans-serif;
+      font-size:21px;
+      line-height:1.22;
+      font-weight:550;
+      letter-spacing:-.035em;
+      color:#fff;
+    }
+
+    .package p{
+      margin:0;
+      color:#aca192;
+      font-size:15px;
+      line-height:1.68;
+      font-weight:300;
+    }
+
+    .package ul{
+      margin:22px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:11px;
+    }
+
+    .package li{
+      position:relative;
+      padding-left:22px;
+      color:#d8cab7;
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .package li:before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold2);
+    }
+
+    .process-layout{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .process-card{
+      position:relative;
+      min-height:520px;
+      border:1px solid rgba(237,211,160,.14);
+      border-radius:32px;
+      overflow:hidden;
+      background:#090909;
+      box-shadow:0 24px 86px rgba(0,0,0,.26);
+    }
+
+    .process-card:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:var(--photo2);
+      background-size:cover;
+      background-position:center;
+      filter:saturate(.88) contrast(1.03);
+      transform:scale(1.02);
+    }
+
+    .process-card:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.14),rgba(0,0,0,.82));
+    }
+
+    .process-card-content{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:1;
+      padding:30px;
+    }
+
+    .process-card-content h3{
+      margin:0 0 12px;
+      font-family:"Manrope","Inter",sans-serif;
+      color:#fff;
+      font-size:28px;
+      line-height:1.12;
+      letter-spacing:-.045em;
+      font-weight:500;
+    }
+
+    .process-card-content p{
+      margin:0;
+      color:#d4c7b5;
+      font-size:15.5px;
+      line-height:1.65;
+      font-weight:300;
+    }
+
+    .timeline{
+      display:grid;
+      gap:12px;
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:116px 1fr;
+      gap:24px;
+      padding:24px 26px;
+      background:rgba(255,255,255,.027);
+      border:1px solid var(--line);
+      border-radius:24px;
+      transition:.25s ease;
+    }
+
+    .step:hover{
+      transform:translateX(5px);
+      border-color:rgba(237,211,160,.28);
+      background:rgba(192,154,95,.07);
+    }
+
+    .step-num{
+      color:#d6ad71;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:700;
+      padding-top:5px;
+    }
+
+    .step h3{
+      margin:0 0 12px;
+      font-family:"Manrope","Inter",sans-serif;
+      font-size:21px;
+      line-height:1.22;
+      font-weight:550;
+      letter-spacing:-.035em;
+      color:#fff;
+    }
+
+    .step p{
+      margin:0;
+      color:#aca192;
+      font-size:15px;
+      line-height:1.68;
+      font-weight:300;
+    }
+
+    .contact{
+      position:relative;
+      margin-top:70px;
+      background:#030303;
+      border-top:1px solid rgba(237,211,160,.10);
+      overflow:hidden;
+    }
+
+    .contact:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 20% 0%,rgba(192,154,95,.25),transparent 34%),radial-gradient(circle at 88% 20%,rgba(237,211,160,.10),transparent 30%);
+      pointer-events:none;
+    }
+
+    .contact-inner{
+      position:relative;
+      z-index:1;
+      padding:78px 0 34px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+      gap:54px;
+      align-items:start;
+    }
+
+    .contact h2{
+      font-size:clamp(30px,3.7vw,52px);
+      max-width:760px;
+      margin-bottom:20px;
+    }
+
+    .contact-lead{
+      max-width:680px;
+      color:#bcae9c;
+      font-size:16.5px;
+      line-height:1.75;
+      font-weight:300;
+      margin:0 0 28px;
+    }
+
+    .contact-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .qr-card{
+      position:relative;
+      border:1px solid rgba(237,211,160,.15);
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 22% 0%,rgba(237,211,160,.13),transparent 36%),
+        linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.018));
+      padding:24px;
+      box-shadow:0 24px 80px rgba(0,0,0,.30);
+      overflow:hidden;
+      display:grid;
+      gap:16px;
+    }
+
+    .qr-card:before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(circle at 92% 100%,rgba(192,154,95,.12),transparent 34%),
+        linear-gradient(135deg,rgba(255,255,255,.035),transparent 50%);
+      pointer-events:none;
+    }
+
+    .qr-card>*{
+      position:relative;
+      z-index:1;
+    }
+
+    .qr-note{
+      width:max-content;
+      display:inline-flex;
+      padding:8px 11px;
+      border:1px solid rgba(237,211,160,.13);
+      border-radius:999px;
+      background:rgba(5,5,5,.46);
+      color:#e5cfaa;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:700;
+    }
+
+    .qr-card h3{
+      margin:0;
+      color:#fff;
+      font-family:"Manrope","Inter",sans-serif;
+      font-size:24px;
+      line-height:1.18;
+      font-weight:500;
+      letter-spacing:-.035em;
+    }
+
+    .qr-card p{
+      margin:0;
+      color:#bcae9c;
+      font-size:14.5px;
+      line-height:1.62;
+      font-weight:300;
+    }
+
+    .qr-frame{
+      width:min(100%,220px);
+      aspect-ratio:1/1;
+      margin:4px auto 2px;
+      padding:12px;
+      border-radius:24px;
+      background:#fff8eb;
+      box-shadow:
+        0 22px 70px rgba(0,0,0,.34),
+        0 0 0 1px rgba(237,211,160,.16);
+    }
+
+    .qr-frame img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      border-radius:14px;
+    }
+
+    .qr-card .btn{
+      width:100%;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:10px;
+      margin-top:24px;
+      max-width:540px;
+    }
+
+    .contact-item{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      border-bottom:1px solid rgba(237,211,160,.10);
+      color:#e2d4c1;
+      font-size:14.5px;
+    }
+
+    .contact-item span{
+      color:#83786a;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:600;
+    }
+
+    .footer-bottom{
+      position:relative;
+      z-index:1;
+      margin-top:56px;
+      padding-top:22px;
+      border-top:1px solid rgba(237,211,160,.09);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      color:#746b60;
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(14px);
+      transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1);
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .delay-1{transition-delay:.08s}
+    .delay-2{transition-delay:.16s}
+    .delay-3{transition-delay:.24s}
+
+    @keyframes heroGlow{
+      0%,100%{opacity:.82;transform:scale(1)}
+      50%{opacity:1;transform:scale(1.015)}
+    }
+
+    @keyframes brandSheen{
+      0%,100%{background-position:0% center}
+      50%{background-position:100% center}
+    }
 
     @media (max-width:1080px){
-      .hero-grid{grid-template-columns:1fr}.hero-copy{max-width:760px}.hero-video-bg{width:min(66vw,780px);opacity:.62}.portfolio-grid{grid-template-columns:repeat(2,1fr)}.portfolio-card{min-height:390px}.process-layout{grid-template-columns:1fr}.process-card{min-height:420px}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-copy{max-width:760px}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .portfolio-card{min-height:390px}
+      .work-showcase{grid-template-columns:1fr}
+      .work-panel,.work-preview{min-height:auto}
+      .work-preview{min-height:460px}
+      .process-layout{grid-template-columns:1fr}
+      .process-card{min-height:420px}
     }
+
     @media (max-width:920px){
-      .nav-links{display:none}.burger{display:flex}.brand{font-size:18px}.hero{min-height:auto;padding:56px 0 54px}.hero-video-bg{width:72vw;opacity:.46}.section-head,.contact-grid{grid-template-columns:1fr;gap:24px}.services-grid,.packages{grid-template-columns:1fr 1fr}section{padding:66px 0}.offer-section{padding:72px 0}
+      .nav-links{display:none}
+      .burger{display:flex}
+      .brand{font-size:18px}
+      .hero{min-height:auto;padding:56px 0 54px}
+      .section-head,.contact-grid{grid-template-columns:1fr;gap:24px}
+      .packages{grid-template-columns:1fr 1fr}
+      .works-gallery{grid-template-columns:repeat(2,1fr)}
+      .gallery-item,
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(2),
+      .gallery-item:nth-child(3),
+      .gallery-item:nth-child(4),
+      .gallery-item:nth-child(5),
+      .gallery-item:nth-child(6),
+      .gallery-item:nth-child(7),
+      .gallery-item:nth-child(8),
+      .gallery-item:nth-child(9){
+        grid-column:auto;
+        min-height:210px;
+      }
+      section{padding:66px 0}
+      .offer-section{padding:72px 0}
     }
+
     @media (max-width:640px){
-      .container{width:min(100% - 24px,var(--max))}.nav-inner{height:66px}.mobile-panel{left:12px;right:12px;top:72px}.brand{font-size:16px;letter-spacing:.08em}.hero{padding:38px 0 42px;min-height:auto}.hero:before{background:radial-gradient(circle at 24% 8%,rgba(237,211,160,.12),transparent 28%),linear-gradient(180deg,#040404,#0a0908 54%,#040404)}.hero:after{height:50%;opacity:.36}.hero-video-bg{right:-46vw;left:auto;width:112vw;height:100%;opacity:.36;filter:saturate(.78) contrast(1.06) blur(.2px);mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 100%)}.hero-video-bg iframe{width:150%;height:150%;filter:saturate(.82) contrast(1.04) brightness(.62)}.hero-glow{background:linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.92) 48%,rgba(4,4,4,.64) 100%)}.hero-copy{text-align:center}.eyebrow{font-size:9.5px;letter-spacing:.08em;line-height:1.35;margin-bottom:16px}h1{font-size:clamp(31px,8.8vw,40px);line-height:1.08;letter-spacing:-.046em;margin-bottom:16px}.lead{font-size:15px;line-height:1.58}.hero-actions{display:grid;grid-template-columns:1fr;margin-top:24px}.btn{width:100%;min-height:46px;font-size:13.5px}.services-grid,.packages,.portfolio-grid{grid-template-columns:1fr}.portfolio-card{min-height:360px}.section-head{margin-bottom:24px}section{padding:54px 0}.offer-section{margin:10px 0;padding:58px 0}.process-card{min-height:360px}.process-card-content{padding:24px}.process-card-content h3{font-size:24px}.step{grid-template-columns:1fr;gap:8px;padding:22px}.contact{margin-top:40px}.contact-inner{padding:58px 0 26px}.contact-actions{display:grid;grid-template-columns:1fr}.contact-item{display:grid;gap:5px}.footer-bottom{margin-top:40px;flex-direction:column;align-items:flex-start}.qr-card{padding:22px;border-radius:24px}.qr-frame{width:min(100%,220px);margin-left:auto;margin-right:auto}.qr-card{text-align:center}
+      .container{width:min(100% - 24px,var(--max))}
+      .nav-inner{height:66px}
+      .mobile-panel{left:12px;right:12px;top:72px}
+      .brand{font-size:16px;letter-spacing:.08em}
+      .hero{padding:38px 0 42px;min-height:auto}
+      .hero-video-bg iframe{width:160vw;height:130vh;filter:saturate(.82) contrast(1.04) brightness(.58)}
+      .hero-video-bg:before{
+        background:
+          linear-gradient(90deg,rgba(4,4,4,.96) 0%,rgba(4,4,4,.88) 48%,rgba(4,4,4,.54) 100%),
+          linear-gradient(180deg,rgba(4,4,4,.78) 0%,rgba(4,4,4,.16) 38%,rgba(4,4,4,.84) 100%);
+      }
+      .hero-glow{background:linear-gradient(90deg,rgba(4,4,4,.98) 0%,rgba(4,4,4,.92) 48%,rgba(4,4,4,.64) 100%)}
+      .hero-copy{text-align:center}
+      .eyebrow{font-size:9.5px;letter-spacing:.08em;line-height:1.35;margin-bottom:16px}
+      h1{font-size:clamp(31px,8.8vw,40px);line-height:1.08;letter-spacing:-.046em;margin-bottom:16px}
+      .lead{font-size:15px;line-height:1.58}
+      .hero-actions{display:grid;grid-template-columns:1fr;margin-top:24px}
+      .btn{width:100%;min-height:46px;font-size:13.5px}
+      .packages,.portfolio-grid,.works-gallery{grid-template-columns:1fr}
+      .portfolio-card{min-height:360px}
+      .section-head{margin-bottom:24px}
+      section{padding:54px 0}
+      .offer-section{margin:10px 0;padding:58px 0}
+      .work-panel{padding:22px;border-radius:24px}
+      .work-chip{grid-template-columns:38px 1fr;border-radius:18px}
+      .work-chip b{width:38px;height:38px;border-radius:14px}
+      .work-preview{min-height:390px;border-radius:24px}
+      .work-preview-content{padding:22px}
+      .work-preview-content h3{font-size:24px}
+      .gallery-item{min-height:230px;border-radius:22px}
+      .process-card{min-height:360px}
+      .process-card-content{padding:24px}
+      .process-card-content h3{font-size:24px}
+      .step{grid-template-columns:1fr;gap:8px;padding:22px}
+      .contact{margin-top:40px}
+      .contact-inner{padding:58px 0 26px}
+      .contact-actions{display:grid;grid-template-columns:1fr}
+      .contact-item{display:grid;gap:5px}
+      .footer-bottom{margin-top:40px;flex-direction:column;align-items:flex-start}
+      .qr-card{padding:22px;border-radius:24px;text-align:center}
+      .qr-note{margin:0 auto}
+      .qr-frame{width:min(100%,210px)}
     }
+
     @media (prefers-reduced-motion:reduce){
-      *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+      *,*:before,*:after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <nav class="nav" id="nav">
     <div class="container nav-inner">
-<a class="brand" href="#top" aria-label="KMF Interior">KMF Interior</a>
+      <a class="brand" href="#top" aria-label="KMF Interior">KMF Interior</a>
+
       <div class="nav-links">
         <a href="#portfolio">Примеры</a>
         <a href="#services">Услуги</a>
@@ -233,7 +1447,13 @@
         <a href="#packages">Форматы</a>
         <a href="#contact" class="nav-cta">Получить расчет</a>
       </div>
-      <button class="burger" id="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="mobile-panel" id="mobilePanel">
         <a href="#portfolio">Примеры</a>
         <a href="#services">Услуги</a>
@@ -247,17 +1467,24 @@
   <main id="top">
     <section class="hero">
       <div class="hero-video-bg" aria-hidden="true">
-        <iframe src="https://player.vimeo.com/video/1207267172?background=1&autoplay=1&muted=1&loop=1&autopause=0&playsinline=1&controls=0" allow="autoplay; fullscreen; picture-in-picture" title="KMF Interior video background"></iframe>
+        <iframe src="https://player.vimeo.com/video/1207303984?background=1&autoplay=1&muted=1&loop=1&autopause=0&playsinline=1&controls=0" allow="autoplay; fullscreen; picture-in-picture" title="KMF Interior video background"></iframe>
       </div>
+
       <div class="hero-glow"></div>
+
       <div class="container hero-grid">
         <div class="hero-copy reveal visible">
           <div class="eyebrow"><i></i>Караганда · ремонт · мебель · интерьер</div>
-          <h1>Ремонт под ключ с мебелью, которая <span class="title-gold">точно встает в интерьер</span></h1>
-          <p class="lead">Продумываем дизайн, ремонт, материалы и мебель как единую систему. Вы получаете готовое пространство без лишней суеты, разрозненных подрядчиков и случайных решений на объекте.</p>
+
+          <h1>Ремонт под ключ и мебель на заказ <span class="title-gold">в едином стиле</span></h1>
+
+          <p class="lead">
+            Делаем интерьер целиком: ремонт, отделочные работы, кухни, шкафы, прихожие, ванные, спальни и корпусную мебель под размеры вашего объекта. Один проект, один стиль, один понятный результат.
+          </p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/77470268980?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20ремонту%20и%20мебели%20под%20ключ" target="_blank" rel="noopener">Получить консультацию</a>
-            <a class="btn btn-ghost" href="#portfolio">Посмотреть решения</a>
+            <a class="btn btn-primary" href="https://wa.me/77470268980?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20ремонту%20и%20мебели%20на%20заказ" target="_blank" rel="noopener">Получить консультацию</a>
+            <a class="btn btn-ghost" href="#services">Что делаем</a>
           </div>
         </div>
       </div>
@@ -270,20 +1497,43 @@
             <div class="kicker">Визуальный ориентир</div>
             <h2>Интерьеры, которые выглядят дорого и живут удобно</h2>
           </div>
-          <p class="section-copy">Мы делаем не просто красивую картинку. Важны свет, хранение, материалы, эргономика и мебель, которая точно становится на свое место.</p>
+
+          <p class="section-copy">
+            Мы делаем не просто красивую картинку. Важны свет, хранение, материалы, эргономика и мебель, которая точно становится на свое место.
+          </p>
         </div>
+
         <div class="portfolio-grid">
           <article class="portfolio-card reveal" style="--img:var(--photo1)">
-            <div class="portfolio-body"><span>Гостиная</span><h3>Спокойная премиальность</h3><p>Мягкие фактуры, теплый свет и чистые линии без визуального шума.</p></div>
+            <div class="portfolio-body">
+              <span>Гостиная</span>
+              <h3>Спокойная премиальность</h3>
+              <p>Мягкие фактуры, теплый свет и чистые линии без визуального шума.</p>
+            </div>
           </article>
+
           <article class="portfolio-card reveal delay-1" style="--img:var(--photo2)">
-            <div class="portfolio-body"><span>Кухня</span><h3>Функциональная зона</h3><p>Продуманная мебель, удобное хранение и цельная композиция.</p></div>
+            <div class="portfolio-body">
+              <span>Кухня</span>
+              <h3>Функциональная зона</h3>
+              <p>Продуманная мебель, удобное хранение и цельная композиция.</p>
+            </div>
           </article>
+
           <article class="portfolio-card reveal delay-2" style="--img:var(--photo3)">
-            <div class="portfolio-body"><span>Детали</span><h3>Материалы и свет</h3><p>Акценты, которые делают интерьер выразительным, но не перегруженным.</p></div>
+            <div class="portfolio-body">
+              <span>Детали</span>
+              <h3>Материалы и свет</h3>
+              <p>Акценты, которые делают интерьер выразительным, но не перегруженным.</p>
+            </div>
           </article>
+
           <article class="portfolio-card reveal delay-3" style="--img:var(--photo4)">
-            <div class="portfolio-body"><span>Мебель</span><h3>Точно под размеры</h3><p>Встроенные решения, которые экономят пространство и выглядят аккуратно.</p></div>
+            <div class="portfolio-body">
+              <span>Мебель</span>
+              <h3>Точно под размеры</h3>
+              <p>Встроенные решения, которые экономят пространство и выглядят аккуратно.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -294,41 +1544,89 @@
         <div class="section-head reveal">
           <div>
             <div class="kicker">Что делаем</div>
-            <h2>Закрываем весь путь от планировки до мебели</h2>
+            <h2>Ремонт, отделка и мебель на заказ в одном проекте</h2>
           </div>
-          <p class="section-copy">Вам не нужно отдельно искать дизайнера, ремонтную бригаду, мебельщиков и поставщиков. Мы собираем проект в единую систему, где каждый следующий этап уже учитывает предыдущий.</p>
+
+          <p class="section-copy">
+            Создаем готовые пространства под ключ: от ремонта и отделочных работ до мебели, которая точно подходит по размерам, цвету, хранению и стилю.
+          </p>
         </div>
-        <div class="services-grid">
-          <article class="service-card reveal">
-            <span class="service-num">01 · Интерьер</span>
-            <h3>Дизайн-проект</h3>
-            <p>Создаем понятную концепцию будущего пространства: планировки, стиль, материалы, цвета, свет, мебель и сценарии жизни.</p>
-            <ul class="service-list">
-              <li>индивидуальное решение под объект</li>
-              <li>визуальная логика интерьера</li>
-              <li>основа для точной сметы</li>
-            </ul>
-          </article>
-          <article class="service-card reveal delay-1">
-            <span class="service-num">02 · Ремонт</span>
-            <h3>Отделка и ремонт</h3>
-            <p>Ведем работы по согласованному плану: черновые этапы, инженерия, чистовая отделка, монтаж и финальная подготовка.</p>
-            <ul class="service-list">
-              <li>контроль качества на этапах</li>
-              <li>согласование материалов</li>
-              <li>аккуратная сдача объекта</li>
-            </ul>
-          </article>
-          <article class="service-card reveal delay-2">
-            <span class="service-num">03 · Мебель</span>
-            <h3>Мебель на заказ</h3>
-            <p>Проектируем и изготавливаем мебель под размеры помещения, чтобы интерьер выглядел цельно и был удобен каждый день.</p>
-            <ul class="service-list">
-              <li>кухни, шкафы, гардеробные</li>
-              <li>корпусная мебель под проект</li>
-              <li>стыковка с ремонтом и дизайном</li>
-            </ul>
-          </article>
+
+        <div class="work-showcase reveal">
+          <div class="work-panel">
+            <span class="work-badge">Мебель · ремонт · отделка</span>
+
+            <h3>Собираем интерьер без разрозненных подрядчиков</h3>
+
+            <p>
+              Вы не ищете отдельно ремонтников, мебельщиков и поставщиков. Мы связываем отделку, материалы, размеры и мебель в одну систему, чтобы кухня, шкафы, ванная, спальня и прихожая выглядели цельно.
+            </p>
+
+            <div class="category-strip">
+              <span>Кухни</span>
+              <span>Шкафы</span>
+              <span>Прихожие</span>
+              <span>Ванные</span>
+              <span>Спальни</span>
+              <span>Мебель на заказ</span>
+            </div>
+
+            <div class="work-chips">
+              <button class="work-chip active" type="button" data-img="var(--g1)" data-title="Мебель на заказ под размеры объекта" data-text="Кухни, шкафы, гардеробные, прихожие, мебель для ванных и спален. Проектируем так, чтобы хранение было удобным, а интерьер выглядел цельно.">
+                <b>01</b>
+                <div>
+                  <span>Мебель на заказ</span>
+                  <small>Кухни, шкафы, прихожие, ванные, спальни</small>
+                </div>
+              </button>
+
+              <button class="work-chip" type="button" data-img="var(--g3)" data-title="Ремонт под ключ без лишней суеты" data-text="Берем на себя этапы ремонта: подготовку, черновые работы, чистовую отделку, монтаж и аккуратную сдачу объекта.">
+                <b>02</b>
+                <div>
+                  <span>Ремонт под ключ</span>
+                  <small>План работ, контроль этапов, понятная сдача</small>
+                </div>
+              </button>
+
+              <button class="work-chip" type="button" data-img="var(--g6)" data-title="Отделочные работы в едином стиле" data-text="Стены, полы, потолки, свет, декоративные решения и материалы подбираются так, чтобы интерьер смотрелся современно и дорого.">
+                <b>03</b>
+                <div>
+                  <span>Отделочные работы</span>
+                  <small>Материалы, свет, чистовая отделка, детали</small>
+                </div>
+              </button>
+
+              <button class="work-chip" type="button" data-img="var(--g8)" data-title="Комплектация и финальная сборка" data-text="Помогаем довести объект до готового состояния: мебель, фурнитура, монтаж, детали и финальные решения под стиль интерьера.">
+                <b>04</b>
+                <div>
+                  <span>Комплектация</span>
+                  <small>Фурнитура, монтаж, детали, финальная сдача</small>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="work-preview" id="workPreview" style="--work-img:var(--g1)">
+            <div class="work-preview-content">
+              <span>Выберите направление слева</span>
+              <h3 id="workTitle">Мебель на заказ под размеры объекта</h3>
+              <p id="workText">
+                Кухни, шкафы, гардеробные, прихожие, мебель для ванных и спален. Проектируем так, чтобы хранение было удобным, а интерьер выглядел цельно.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="works-gallery">
+          <div class="gallery-item reveal" style="--img:var(--g1)"><span>Кухни на заказ</span></div>
+          <div class="gallery-item reveal delay-1" style="--img:var(--g2)"><span>Современные гостиные</span></div>
+          <div class="gallery-item reveal delay-2" style="--img:var(--g3)"><span>Ремонт и отделка</span></div>
+          <div class="gallery-item reveal delay-3" style="--img:var(--g4)"><span>Спальни и хранение</span></div>
+          <div class="gallery-item reveal" style="--img:var(--g5)"><span>Ванные комнаты</span></div>
+          <div class="gallery-item reveal delay-1" style="--img:var(--g6)"><span>Фасады и детали</span></div>
+          <div class="gallery-item reveal delay-2" style="--img:var(--g7)"><span>Прихожие</span></div>
+          <div class="gallery-item reveal delay-3" style="--img:var(--g8)"><span>Шкафы и гардеробные</span></div>
+          <div class="gallery-item reveal" style="--img:var(--g9)"><span>Мебель под интерьер</span></div>
         </div>
       </div>
     </section>
@@ -338,39 +1636,45 @@
         <div class="section-head reveal">
           <div>
             <div class="kicker">Форматы работы</div>
-            <h2>Подберем объем под вашу задачу и бюджет</h2>
+            <h2>Подберем решение под ваш объект, бюджет и сроки</h2>
           </div>
-          <p class="section-copy">Можно начать с консультации и точного понимания объекта, а затем перейти к проекту, ремонту, мебели и комплектации без смены подрядчиков.</p>
+
+          <p class="section-copy">
+            Можно заказать отдельную мебель, отделочные работы или комплексный ремонт под ключ с мебелью. Сначала уточняем задачу, затем предлагаем понятный план и расчет.
+          </p>
         </div>
+
         <div class="packages">
           <article class="package reveal">
-            <span class="package-label">Старт</span>
-            <h3>Консультация и расчет</h3>
-            <p>Подходит, если нужно понять объем работ, порядок действий и реалистичный бюджет.</p>
+            <span class="package-label">Мебель</span>
+            <h3>Мебель на заказ</h3>
+            <p>Для тех, кому нужны кухни, шкафы, прихожие, ванные, спальни или корпусная мебель под точные размеры.</p>
             <ul>
-              <li>разбор объекта и задач</li>
-              <li>предварительная смета</li>
-              <li>рекомендации по этапам</li>
+              <li>замер и подбор решения</li>
+              <li>проектирование под интерьер</li>
+              <li>изготовление и монтаж</li>
             </ul>
           </article>
+
           <article class="package featured reveal delay-1">
             <span class="package-label">Оптимально</span>
-            <h3>Ремонт под ключ</h3>
-            <p>Берем на себя организацию ремонта, подбор материалов и контроль результата.</p>
+            <h3>Ремонт и отделка</h3>
+            <p>Подходит, если нужно аккуратно обновить квартиру, дом или отдельные зоны без хаоса и случайных решений.</p>
             <ul>
-              <li>план работ и закупок</li>
-              <li>ремонт и отделка</li>
-              <li>еженедельная фиксация этапов</li>
+              <li>черновые и чистовые работы</li>
+              <li>подбор материалов</li>
+              <li>контроль качества на этапах</li>
             </ul>
           </article>
+
           <article class="package reveal delay-2">
             <span class="package-label">Полный цикл</span>
-            <h3>Интерьер + мебель</h3>
-            <p>Комплексный формат для тех, кто хочет получить готовое пространство без лишних хлопот.</p>
+            <h3>Ремонт + мебель под ключ</h3>
+            <p>Комплексный формат для тех, кто хочет получить готовый интерьер, где ремонт и мебель сразу подходят друг к другу.</p>
             <ul>
-              <li>дизайн и ремонт</li>
-              <li>мебель на заказ</li>
-              <li>комплектация и финальная сдача</li>
+              <li>единая концепция объекта</li>
+              <li>ремонт, отделка и мебель</li>
+              <li>финальная сдача готового пространства</li>
             </ul>
           </article>
         </div>
@@ -384,8 +1688,12 @@
             <div class="kicker">Как работаем</div>
             <h2>Процесс, где все понятно до начала ремонта</h2>
           </div>
-          <p class="section-copy">Мы заранее согласуем решения, чтобы на объекте было меньше спонтанных расходов, переделок и конфликтов между разными исполнителями.</p>
+
+          <p class="section-copy">
+            Мы заранее согласуем решения, чтобы на объекте было меньше спонтанных расходов, переделок и конфликтов между разными исполнителями.
+          </p>
         </div>
+
         <div class="process-layout">
           <div class="process-card reveal">
             <div class="process-card-content">
@@ -393,12 +1701,47 @@
               <p>Каждый этап связан с общей концепцией: от планировки и инженерии до мебели, света и деталей.</p>
             </div>
           </div>
+
           <div class="timeline">
-            <article class="step reveal"><div class="step-num">Шаг 01</div><div><h3>Знакомство и замер</h3><p>Обсуждаем задачу, фиксируем пожелания, смотрим объект и определяем реалистичный формат работ.</p></div></article>
-            <article class="step reveal delay-1"><div class="step-num">Шаг 02</div><div><h3>Концепция и смета</h3><p>Предлагаем решения, считаем основные работы и материалы, согласуем приоритеты.</p></div></article>
-            <article class="step reveal delay-2"><div class="step-num">Шаг 03</div><div><h3>Ремонт и контроль</h3><p>Ведем объект по этапам, контролируем качество и заранее согласуем ключевые решения.</p></div></article>
-            <article class="step reveal delay-3"><div class="step-num">Шаг 04</div><div><h3>Мебель и комплектация</h3><p>Изготавливаем мебель по размерам, подбираем необходимые позиции и стыкуем их с интерьером.</p></div></article>
-            <article class="step reveal"><div class="step-num">Шаг 05</div><div><h3>Сдача под ключ</h3><p>Передаем готовый объект, где ремонт, мебель и детали работают как единое пространство.</p></div></article>
+            <article class="step reveal">
+              <div class="step-num">Шаг 01</div>
+              <div>
+                <h3>Знакомство и замер</h3>
+                <p>Обсуждаем задачу, фиксируем пожелания, смотрим объект и определяем реалистичный формат работ.</p>
+              </div>
+            </article>
+
+            <article class="step reveal delay-1">
+              <div class="step-num">Шаг 02</div>
+              <div>
+                <h3>Концепция и смета</h3>
+                <p>Предлагаем решения, считаем основные работы и материалы, согласуем приоритеты.</p>
+              </div>
+            </article>
+
+            <article class="step reveal delay-2">
+              <div class="step-num">Шаг 03</div>
+              <div>
+                <h3>Ремонт и контроль</h3>
+                <p>Ведем объект по этапам, контролируем качество и заранее согласуем ключевые решения.</p>
+              </div>
+            </article>
+
+            <article class="step reveal delay-3">
+              <div class="step-num">Шаг 04</div>
+              <div>
+                <h3>Мебель и комплектация</h3>
+                <p>Изготавливаем мебель по размерам, подбираем необходимые позиции и стыкуем их с интерьером.</p>
+              </div>
+            </article>
+
+            <article class="step reveal">
+              <div class="step-num">Шаг 05</div>
+              <div>
+                <h3>Сдача под ключ</h3>
+                <p>Передаем готовый объект, где ремонт, мебель и детали работают как единое пространство.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -410,28 +1753,42 @@
       <div class="contact-grid">
         <div class="reveal">
           <div class="kicker">Оставить заявку</div>
-          <h2>Хотите красивый ремонт без бесконечной стройки?</h2>
-          <p class="contact-lead">Напишите нам. Уточним задачу, подскажем, с чего лучше начать, и подготовим понятный план по вашему объекту.</p>
+
+          <h2>Хотите красивый ремонт и мебель без лишней стройки?</h2>
+
+          <p class="contact-lead">
+            Напишите нам. Уточним задачу, подскажем, с чего лучше начать, и подготовим понятный план по ремонту, отделке или мебели на заказ.
+          </p>
+
           <div class="contact-actions">
-            <a class="btn btn-primary" href="https://wa.me/77470268980?text=Здравствуйте!%20Хочу%20обсудить%20ремонт%20и%20мебель%20под%20ключ" target="_blank" rel="noopener">Написать в WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/77470268980?text=Здравствуйте!%20Хочу%20обсудить%20ремонт%20и%20мебель%20на%20заказ" target="_blank" rel="noopener">Написать в WhatsApp</a>
             <a class="btn btn-ghost" href="tel:+77470268980">Позвонить</a>
           </div>
+
           <div class="contact-list">
             <div class="contact-item"><span>Телефон</span><a href="tel:+77470268980">+7 747 026 89 80</a></div>
             <div class="contact-item"><span>Instagram</span><a href="https://www.instagram.com/kmf_interior_kz/" target="_blank" rel="noopener">@kmf_interior_kz</a></div>
             <div class="contact-item"><span>Город</span><div>Караганда</div></div>
           </div>
         </div>
+
         <div class="qr-card reveal delay-1">
-          <div class="qr-frame">
-            <img src="assets/whatsapp-qr.png" alt="QR-код для перехода в WhatsApp KMF Interior">
-          </div>
           <span class="qr-note">WhatsApp QR</span>
+
           <h3>Сканируйте код и напишите нам</h3>
-          <p>Откроется чат WhatsApp с готовым сообщением. Удобно отправить планировку, фото объекта или просто задать первый вопрос.</p>
-          <a class="btn btn-primary" href="https://wa.me/77470268980?text=Здравствуйте!%20Хочу%20обсудить%20ремонт%20и%20мебель%20под%20ключ" target="_blank" rel="noopener">Открыть WhatsApp</a>
+
+          <p>
+            Откроется чат WhatsApp. Можно отправить фото объекта, планировку, размеры мебели или коротко описать задачу.
+          </p>
+
+          <div class="qr-frame">
+            <img src="http://qrcoder.ru/code/?https%3A%2F%2Fwa.me%2F77470268980&amp;4&amp;0" alt="QR-код для перехода в WhatsApp KMF Interior">
+          </div>
+
+          <a class="btn btn-primary" href="https://wa.me/77470268980?text=Здравствуйте!%20Хочу%20обсудить%20ремонт%20и%20мебель%20на%20заказ" target="_blank" rel="noopener">Открыть WhatsApp</a>
         </div>
       </div>
+
       <div class="footer-bottom">
         <div>© KMF Interior · ремонт, мебель и интерьер под ключ</div>
         <div>Качество · стиль · надежность</div>
@@ -442,14 +1799,20 @@
   <script>
     const nav = document.getElementById('nav');
     const burger = document.getElementById('burger');
+
     burger.addEventListener('click', () => nav.classList.toggle('open'));
-    document.querySelectorAll('.mobile-panel a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
+
+    document.querySelectorAll('.mobile-panel a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
 
     const progress = document.getElementById('scrollProgress');
+
     const updateProgress = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
     };
+
     window.addEventListener('scroll', updateProgress, {passive:true});
     updateProgress();
 
@@ -461,7 +1824,24 @@
         }
       });
     }, {threshold:.14});
+
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const workPreview = document.getElementById('workPreview');
+    const workTitle = document.getElementById('workTitle');
+    const workText = document.getElementById('workText');
+    const workChips = document.querySelectorAll('.work-chip');
+
+    workChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        workChips.forEach(item => item.classList.remove('active'));
+        chip.classList.add('active');
+
+        workPreview.style.setProperty('--work-img', chip.dataset.img);
+        workTitle.textContent = chip.dataset.title;
+        workText.textContent = chip.dataset.text;
+      });
+    });
   </script>
 </body>
 </html>
